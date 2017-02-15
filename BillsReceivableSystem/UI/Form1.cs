@@ -52,21 +52,8 @@ namespace BillsReceivableSystem
             }
         }
 
-        private void txtInvoiceAmount_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            decimal x;
-            if (ch == (char) Keys.Back)
-            {
-                e.Handled = false;
-            }
-            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(txtInvoiceAmount.Text + ch, out x))
-            {
-                e.Handled = true;
-            }
-        }
 
-        private void browseButton_Click(object sender, EventArgs e)
+        private void browseButton_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -88,31 +75,27 @@ namespace BillsReceivableSystem
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
-        private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtInvoiceAmount_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            string ContactNo = txtContactNo.Text;
-           
-            if (char.IsNumber(e.KeyChar))
-            { }
-            else
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
             {
-                e.Handled = e.KeyChar != (char)Keys.Back;
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(txtInvoiceAmount.Text + ch, out x))
+            {
+                e.Handled = true;
             }
         }
 
-        private void BtnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbBillPayable_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbBillPayable_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cmbBillPayable.Text == "Not In The List")
             {
-                string inpt = Microsoft.VisualBasic.Interaction.InputBox("Please Input Payable Name Here", "Input Here","", -1, -1);
+                string inpt = Microsoft.VisualBasic.Interaction.InputBox("Please Input Payable Name Here", "Input Here", "", -1, -1);
             }
         }
     }

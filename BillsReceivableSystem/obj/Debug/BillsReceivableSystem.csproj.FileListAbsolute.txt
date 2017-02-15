@@ -7,12 +7,13 @@ c:\users\kowsar\documents\visual studio 2013\Projects\BillsReceivableSystem\Bill
 c:\users\kowsar\documents\visual studio 2013\Projects\BillsReceivableSystem\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.csproj.GenerateResource.Cache
 c:\users\kowsar\documents\visual studio 2013\Projects\BillsReceivableSystem\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.exe
 c:\users\kowsar\documents\visual studio 2013\Projects\BillsReceivableSystem\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.pdb
-G:\git\BillsReceivable\BillsReceivableSystem\bin\Debug\BillsReceivableSystem.exe.config
-G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.exe
-G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.pdb
 G:\git\BillsReceivable\BillsReceivableSystem\bin\Debug\BillsReceivableSystem.exe
-G:\git\BillsReceivable\BillsReceivableSystem\bin\Debug\BillsReceivableSystem.pdb
-G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.csprojResolveAssemblyReference.cache
+G:\git\BillsReceivable\BillsReceivableSystem\bin\Debug\BillsReceivableSystem.exe.config
 G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.Properties.Resources.resources
+G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.UI.Invoice.resources
 G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.Form1.resources
 G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.csproj.GenerateResource.Cache
+G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.exe
+G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.pdb
+G:\git\BillsReceivable\BillsReceivableSystem\bin\Debug\BillsReceivableSystem.pdb
+G:\git\BillsReceivable\BillsReceivableSystem\obj\Debug\BillsReceivableSystem.csprojResolveAssemblyReference.cache
