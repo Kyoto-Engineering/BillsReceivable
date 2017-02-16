@@ -47,7 +47,7 @@
             this.lblInvoiceParty = new System.Windows.Forms.Label();
             this.txtNetReceivable = new System.Windows.Forms.TextBox();
             this.lblNetReceivable = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPromisedDate = new System.Windows.Forms.DateTimePicker();
             this.lblPromisedDate = new System.Windows.Forms.Label();
             this.txtLandPhone = new System.Windows.Forms.TextBox();
             this.lblLandPhone = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(837, 430);
+            this.btnSave.Location = new System.Drawing.Point(789, 430);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 52);
             this.btnSave.TabIndex = 108;
@@ -158,6 +158,7 @@
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
             this.dtpInvoiceDate.Size = new System.Drawing.Size(144, 29);
             this.dtpInvoiceDate.TabIndex = 129;
+            this.dtpInvoiceDate.ValueChanged += new System.EventHandler(this.dtpInvoiceDate_ValueChanged);
             // 
             // lblInvoiceDate
             // 
@@ -177,6 +178,7 @@
             this.txtGrossReceivable.Name = "txtGrossReceivable";
             this.txtGrossReceivable.Size = new System.Drawing.Size(145, 29);
             this.txtGrossReceivable.TabIndex = 127;
+            this.txtGrossReceivable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGrossReceivable_KeyPress);
             // 
             // lblGrossReceivable
             // 
@@ -198,6 +200,7 @@
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.Size = new System.Drawing.Size(144, 29);
             this.dtpDueDate.TabIndex = 139;
+            this.dtpDueDate.ValueChanged += new System.EventHandler(this.dtpDueDate_ValueChanged);
             // 
             // lblDueDate
             // 
@@ -237,6 +240,7 @@
             this.txtNetReceivable.Name = "txtNetReceivable";
             this.txtNetReceivable.Size = new System.Drawing.Size(145, 29);
             this.txtNetReceivable.TabIndex = 143;
+            this.txtNetReceivable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNetReceivable_KeyPress);
             // 
             // lblNetReceivable
             // 
@@ -249,15 +253,16 @@
             this.lblNetReceivable.TabIndex = 144;
             this.lblNetReceivable.Text = "Net Receivable :";
             // 
-            // dateTimePicker1
+            // dtpPromisedDate
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(790, 318);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(144, 29);
-            this.dateTimePicker1.TabIndex = 145;
+            this.dtpPromisedDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpPromisedDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPromisedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPromisedDate.Location = new System.Drawing.Point(790, 318);
+            this.dtpPromisedDate.Name = "dtpPromisedDate";
+            this.dtpPromisedDate.Size = new System.Drawing.Size(144, 29);
+            this.dtpPromisedDate.TabIndex = 145;
+            this.dtpPromisedDate.ValueChanged += new System.EventHandler(this.dtpPromisedDate_ValueChanged);
             // 
             // lblPromisedDate
             // 
@@ -297,7 +302,7 @@
             this.ClientSize = new System.Drawing.Size(1070, 547);
             this.Controls.Add(this.txtLandPhone);
             this.Controls.Add(this.lblLandPhone);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpPromisedDate);
             this.Controls.Add(this.lblPromisedDate);
             this.Controls.Add(this.txtNetReceivable);
             this.Controls.Add(this.lblNetReceivable);
@@ -347,7 +352,7 @@
         private System.Windows.Forms.Label lblInvoiceParty;
         private System.Windows.Forms.TextBox txtNetReceivable;
         private System.Windows.Forms.Label lblNetReceivable;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpPromisedDate;
         private System.Windows.Forms.Label lblPromisedDate;
         private System.Windows.Forms.TextBox txtLandPhone;
         private System.Windows.Forms.Label lblLandPhone;

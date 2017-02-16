@@ -98,5 +98,10 @@ namespace BillsReceivableSystem
                 string inpt = Microsoft.VisualBasic.Interaction.InputBox("Please Input Payable Name Here", "Input Here", "", -1, -1);
             }
         }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

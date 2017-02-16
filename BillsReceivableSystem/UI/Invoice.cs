@@ -66,7 +66,7 @@ namespace BillsReceivableSystem.UI
         }
         private void cmbQuotation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //txtInvoiceParty.Clear();
+            
             SelectSclientId();
             
             try
@@ -131,6 +131,66 @@ namespace BillsReceivableSystem.UI
         {
 
         }
+
+        private void txtGrossReceivable_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(txtGrossReceivable.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNetReceivable_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(txtNetReceivable.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtpInvoiceDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpInvoiceDate.Value > DateTime.Now)
+            {
+               
+                MessageBox.Show("You should select correct date or previous date from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpInvoiceDate.ResetText();
+            }
+        }
+
+        private void dtpDueDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpDueDate.Value < dtpInvoiceDate.Value)
+            {
+
+                MessageBox.Show("You should select correct date or previous date from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpDueDate.ResetText();
+            }
+        }
+
+        private void dtpPromisedDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpPromisedDate.Value < dtpDueDate.Value || dtpPromisedDate.Value < dtpInvoiceDate.Value)
+            {
+
+                MessageBox.Show("You should select correct date or previous date from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpPromisedDate.ResetText();
+            }
+        }
+
+        
       
     }
 }

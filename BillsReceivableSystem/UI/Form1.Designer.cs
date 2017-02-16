@@ -191,6 +191,7 @@
             this.BtnSave.Size = new System.Drawing.Size(121, 60);
             this.BtnSave.TabIndex = 116;
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // browseButton
             // 
