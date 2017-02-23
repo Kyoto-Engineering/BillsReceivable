@@ -139,47 +139,50 @@ namespace BillsReceivableSystem.UI
         }
 
 
-    
 
-        //private void SaveReferenceNumForInvoice()
-        //{
 
-        //    try
-        //    {
-        //            con = new SqlConnection(cs.DBConn);
-        //            con.Open();
-                    
-        //            //string qr2 = "SELECT MAX(RefNumForQuotation.SQN) FROM RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
-        //              string qr2 = "SELECT SClientId FROM RefNumForQuotation";
-        //            cmd = new SqlCommand(qr2, con);
-        //            rdr = cmd.ExecuteReader();
-        //        if (rdr.Read())
-        //        {
-        //            sQN = (rdr.GetInt32(0));
-        //            sQN = sQN + 1;
-        //            referenceNo = "INV-" + sclientId + "-" + sQN + "-" + quotationId + "";
-        //        }
-        //        con = new SqlConnection(cs.DBConn);
-        //        string cb = "insert into RefNumForInvoice(Code,SClientId,SQN,QuotationId,RefInvoiceNo) VALUES (@d1,@d2,@d3,@d4,@d5)";
-        //        cmd = new SqlCommand(cb);
-        //        cmd.Connection = con;
-        //        cmd.Parameters.AddWithValue("d1", "INV");
-        //        cmd.Parameters.AddWithValue("d2", sclientId);
-        //        cmd.Parameters.AddWithValue("d3", sQN);
-        //        cmd.Parameters.AddWithValue("d4", quotationId);
-        //        cmd.Parameters.AddWithValue("d5", referenceNo);
-        //        con.Open();
-        //        cmd.ExecuteNonQuery();
-        //        con.Close();
-               
+        private void SaveReferenceNumForInvoice()
+        {
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
 
-        //}
+                //string qr2 = "SELECT MAX(RefNumForQuotation.SQN) FROM RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
+                string qr2 = "SELECT SClientId,SQN FROM RefNumForQuotation WHERE ReferenceNo= '" + cmbQuotation.Text + "'";
+                cmd = new SqlCommand(qr2, con);
+                rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    sclientId = (rdr.GetInt32(0));
+                    sQN = (rdr.GetInt32(1));
+
+                    //sQN = sQN + 1;
+                    referenceNo = "INV-" + sclientId + "-" + sQN + "-" + quotationId + "-" + invoiceId + "";
+                }
+                con = new SqlConnection(cs.DBConn);
+                string cb = "insert into RefNumForInvoice(Code,SClientId,SQN,QuotationId,InvoiceId,RefInvoiceNo) VALUES (@d1,@d2,@d3,@d4,@d5,@d6)";
+                cmd = new SqlCommand(cb);
+                cmd.Connection = con;
+                cmd.Parameters.AddWithValue("d1", "INV");
+                cmd.Parameters.AddWithValue("d2", sclientId);
+                cmd.Parameters.AddWithValue("d3", sQN);
+                cmd.Parameters.AddWithValue("d4", quotationId);
+                cmd.Parameters.AddWithValue("d5", invoiceId);                
+                cmd.Parameters.AddWithValue("d6", referenceNo);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
         private void SaveInvoice()
         {
@@ -235,6 +238,7 @@ namespace BillsReceivableSystem.UI
 
                 SaveInvoice();
                 MessageBox.Show("Successfully Submitted", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SaveReferenceNumForInvoice();
                 ClearData();
                 QuotationIdLoad();
                 cmbQuotation.ResetText();
