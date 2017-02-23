@@ -19,7 +19,7 @@ namespace BillsReceivableSystem.UI
         private SqlCommand cmd;
         private SqlDataReader rdr;
         private ConnectionString cs = new ConnectionString();
-        public int quotationId, sclientId, sQN, invoiceId, user_id;
+        public int refId, quotationId, sclientId, sQN, invoiceId, user_id;
         public string referenceNo;
 
         public Invoice()
@@ -51,12 +51,14 @@ namespace BillsReceivableSystem.UI
             con.Open();
             cmd = con.CreateCommand();
 
-            cmd.CommandText = "select SClientId from RefNumForQuotation WHERE ReferenceNo= '" + cmbQuotation.Text + "'";
+            cmd.CommandText = "select SClientId,RefId,QuotationId from RefNumForQuotation WHERE ReferenceNo= '" + cmbQuotation.Text + "'";
 
             rdr = cmd.ExecuteReader();
             if (rdr.Read())
             {
                 sclientId = rdr.GetInt32(0);
+                refId = rdr.GetInt32(1);
+                quotationId = rdr.GetInt32(2);
             }
             if ((rdr != null))
             {
@@ -139,58 +141,60 @@ namespace BillsReceivableSystem.UI
 
     
 
-        private void SaveReferenceNumForInvoice()
-        {
+        //private void SaveReferenceNumForInvoice()
+        //{
 
-            try
-            {
-                    con = new SqlConnection(cs.DBConn);
-                    con.Open();
+        //    try
+        //    {
+        //            con = new SqlConnection(cs.DBConn);
+        //            con.Open();
                     
-                    //string qr2 = "SELECT MAX(RefNumForQuotation.SQN) FROM RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
-                      string qr2 = "SELECT SClientId FROM RefNumForQuotation";
-                    cmd = new SqlCommand(qr2, con);
-                    rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    sQN = (rdr.GetInt32(0));
-                    sQN = sQN + 1;
-                    referenceNo = "INV-" + sclientId + "-" + sQN + "-" + quotationId + "";
-                }
-                con = new SqlConnection(cs.DBConn);
-                string cb = "insert into RefNumForInvoice(Code,SClientId,SQN,QuotationId,RefInvoiceNo) VALUES (@d1,@d2,@d3,@d4,@d5)";
-                cmd = new SqlCommand(cb);
-                cmd.Connection = con;
-                cmd.Parameters.AddWithValue("d1", "INV");
-                cmd.Parameters.AddWithValue("d2", sclientId);
-                cmd.Parameters.AddWithValue("d3", sQN);
-                cmd.Parameters.AddWithValue("d4", quotationId);
-                cmd.Parameters.AddWithValue("d5", referenceNo);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
+        //            //string qr2 = "SELECT MAX(RefNumForQuotation.SQN) FROM RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
+        //              string qr2 = "SELECT SClientId FROM RefNumForQuotation";
+        //            cmd = new SqlCommand(qr2, con);
+        //            rdr = cmd.ExecuteReader();
+        //        if (rdr.Read())
+        //        {
+        //            sQN = (rdr.GetInt32(0));
+        //            sQN = sQN + 1;
+        //            referenceNo = "INV-" + sclientId + "-" + sQN + "-" + quotationId + "";
+        //        }
+        //        con = new SqlConnection(cs.DBConn);
+        //        string cb = "insert into RefNumForInvoice(Code,SClientId,SQN,QuotationId,RefInvoiceNo) VALUES (@d1,@d2,@d3,@d4,@d5)";
+        //        cmd = new SqlCommand(cb);
+        //        cmd.Connection = con;
+        //        cmd.Parameters.AddWithValue("d1", "INV");
+        //        cmd.Parameters.AddWithValue("d2", sclientId);
+        //        cmd.Parameters.AddWithValue("d3", sQN);
+        //        cmd.Parameters.AddWithValue("d4", quotationId);
+        //        cmd.Parameters.AddWithValue("d5", referenceNo);
+        //        con.Open();
+        //        cmd.ExecuteNonQuery();
+        //        con.Close();
                
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
 
-        }
+        //}
 
-         private void SaveInvoice()
+        private void SaveInvoice()
         {
             try
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                String query = "insert into Invoice(InvoiceDate, DueDate, UserId, QuotationId,GrossReceive, NetReceive, PromisedDate, SClientId) values (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                String query = "insert into Invoice(InvoiceDate, DueDate, QuotationId, RefId, GrossReceive, NetReceive, PromisedDate, SClientId) values (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@d1", dtpInvoiceDate.Value);
                 cmd.Parameters.AddWithValue("@d2", dtpDueDate.Value);
-                cmd.Parameters.AddWithValue("@d3", user_id);
-                cmd.Parameters.AddWithValue("@d4", quotationId);
+                //cmd.Parameters.AddWithValue("@d3", user_id);
+                cmd.Parameters.AddWithValue("@d3", quotationId);
+                cmd.Parameters.AddWithValue("@d4", refId);
+
                 cmd.Parameters.AddWithValue("@d5", Convert.ToDecimal(txtGrossReceivable.Text));
                 cmd.Parameters.AddWithValue("@d6", Convert.ToDecimal(txtNetReceivable.Text));
                 cmd.Parameters.AddWithValue("@d7", dtpPromisedDate.Value);
@@ -228,14 +232,32 @@ namespace BillsReceivableSystem.UI
 
             else
             {
+
                 SaveInvoice();
-                MessageBox.Show("Saved successfully", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SaveReferenceNumForInvoice();
-                
-               
+                MessageBox.Show("Successfully Submitted", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearData();
+                QuotationIdLoad();
+                cmbQuotation.ResetText();
             }
 
 
+        }
+
+
+        private void ClearData()
+        {
+            cmbQuotation.Items.Clear();
+            cmbQuotation.SelectedIndex = -1;
+            txtInvoiceParty.Clear();
+            txtPayerAddress.Clear();
+            txtLandPhone.Clear();
+            txtRP.Clear();
+            txtCellPhone.Clear();
+            dtpInvoiceDate.ResetText();
+            dtpDueDate.ResetText();
+            txtGrossReceivable.Clear();
+            txtNetReceivable.Clear();
+            dtpPromisedDate.ResetText();
         }
 
         private void txtGrossReceivable_KeyPress(object sender, KeyPressEventArgs e)
@@ -298,6 +320,7 @@ namespace BillsReceivableSystem.UI
             } 
         }
 
+      
      
 
       

@@ -137,6 +137,7 @@
             this.txtPayerAddress.Size = new System.Drawing.Size(267, 135);
             this.txtPayerAddress.TabIndex = 122;
             this.txtPayerAddress.Text = "";
+           
             // 
             // lblPayerAddress
             // 
