@@ -216,28 +216,27 @@ namespace BillsReceivableSystem.UI
         {
             if (string.IsNullOrWhiteSpace(cmbQuotation.Text))
             {
-                MessageBox.Show("Please  enter Quotation Id/Ref/Number", "error", MessageBoxButtons.OK,
+                MessageBox.Show("Please Select Quotation Id/Ref/Number", "error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
             }
 
             else if (string.IsNullOrWhiteSpace(txtGrossReceivable.Text))
             {
-                MessageBox.Show("Please  enter Gross Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter Gross Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
             else if (string.IsNullOrWhiteSpace(txtNetReceivable.Text))
             {
-                MessageBox.Show("Please  enter Net Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter Net Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
             else
             {
-
                 SaveInvoice();
-                MessageBox.Show("Successfully Submitted", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully Generated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SaveReferenceNumForInvoice();
                 ClearData();
                 QuotationIdLoad();
@@ -297,7 +296,7 @@ namespace BillsReceivableSystem.UI
             if (dtpInvoiceDate.Value > DateTime.Now)
             {
                
-                MessageBox.Show("You should select correct date or previous date from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Should not be exceed Date Time from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpInvoiceDate.ResetText();
                 
             }
@@ -309,7 +308,7 @@ namespace BillsReceivableSystem.UI
             
             {
 
-                MessageBox.Show("You should select correct date or previous date from today D", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Due Date Should be grater than Invoice Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpDueDate.ResetText();
             } 
         }
@@ -319,15 +318,13 @@ namespace BillsReceivableSystem.UI
             if (dtpDueDate.Value > dtpPromisedDate.Value)
             {
 
-                MessageBox.Show("You should select correct date or previous date from today P", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Promised Date Should be grater than Invoice Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpPromisedDate.ResetText();
             } 
         }
 
-      
-     
 
-      
+ 
     }
 }
 
