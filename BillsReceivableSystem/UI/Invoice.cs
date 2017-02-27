@@ -21,6 +21,7 @@ namespace BillsReceivableSystem.UI
         private ConnectionString cs = new ConnectionString();
         public int refId, quotationId, sclientId, sQN, invoiceId, user_id;
         public string referenceNo;
+        private delegate void ChangeFocusDelegate(Control ctl);
 
         public Invoice()
         {
@@ -40,9 +41,15 @@ namespace BillsReceivableSystem.UI
             }
         }
 
+        private void changeFocus(Control ctl)
+        {
+            ctl.Focus();
+        }
+
         private void Invoice_Load(object sender, EventArgs e)
         {
             QuotationIdLoad();
+            this.BeginInvoke(new ChangeFocusDelegate(changeFocus), cmbQuotation);
         }
 
         public void SelectSclientId()
@@ -72,7 +79,6 @@ namespace BillsReceivableSystem.UI
 
         private void cmbQuotation_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             SelectSclientId();
 
             try
@@ -109,9 +115,6 @@ namespace BillsReceivableSystem.UI
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
 
         private void QuotationIdLoad()
@@ -138,12 +141,8 @@ namespace BillsReceivableSystem.UI
             }
         }
 
-
-
-
         private void SaveReferenceNumForInvoice()
         {
-
             try
             {
                 con = new SqlConnection(cs.DBConn);
@@ -174,7 +173,6 @@ namespace BillsReceivableSystem.UI
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-
 
             }
             catch (Exception ex)
@@ -218,18 +216,21 @@ namespace BillsReceivableSystem.UI
             {
                 MessageBox.Show("Please Select Quotation Id/Ref/Number", "error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), cmbQuotation);
 
             }
 
             else if (string.IsNullOrWhiteSpace(txtGrossReceivable.Text))
             {
                 MessageBox.Show("Please enter Gross Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtGrossReceivable);
 
             }
 
             else if (string.IsNullOrWhiteSpace(txtNetReceivable.Text))
             {
                 MessageBox.Show("Please enter Net Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtNetReceivable);
 
             }
 
@@ -298,7 +299,9 @@ namespace BillsReceivableSystem.UI
                
                 MessageBox.Show("Should not be exceed Date Time from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpInvoiceDate.ResetText();
-                
+                dtpInvoiceDate.Focus();
+                //this.BeginInvoke(new ChangeFocusDelegate(changeFocus), dtpInvoiceDate);
+
             }
         }
 
@@ -310,6 +313,7 @@ namespace BillsReceivableSystem.UI
 
                 MessageBox.Show("Due Date Should be grater than Invoice Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpDueDate.ResetText();
+                dtpDueDate.Focus();
             } 
         }
 
@@ -320,11 +324,19 @@ namespace BillsReceivableSystem.UI
 
                 MessageBox.Show("Promised Date Should be grater than Invoice Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpPromisedDate.ResetText();
+                dtpPromisedDate.Focus();
             } 
         }
 
-
- 
+        private void cmbQuotation_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(cmbQuotation.Text) && !cmbQuotation.Items.Contains(cmbQuotation.Text))
+            {
+                MessageBox.Show("Please Select A Valid Quotation Id/Ref/Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbQuotation.ResetText();
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), cmbQuotation);
+            }
+        } 
     }
 }
 
