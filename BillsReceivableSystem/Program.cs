@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BillsReceivableSystem.LoginUI;
 using BillsReceivableSystem.UI;
 
 namespace BillsReceivableSystem
@@ -17,8 +18,13 @@ namespace BillsReceivableSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Application.Run(new frmLogin());
+            //Application.Run(new frmRegistration());
             //Application.Run(new Form1());
-            Application.Run(new Invoice());
+            //Application.Run(new Invoice());
+            //Application.Run(new NewInvoice());
+            //Application.Run(new MainUI()); 
         }
     }
 }

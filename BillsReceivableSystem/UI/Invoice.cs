@@ -158,13 +158,13 @@ namespace BillsReceivableSystem.UI
                     sQN = (rdr.GetInt32(1));
 
                     //sQN = sQN + 1;
-                    referenceNo = "INV-" + sclientId + "-" + sQN + "-" + quotationId + "-" + invoiceId + "";
+                    referenceNo = "OIA-INV-" + sclientId + "-" + sQN + "-" + quotationId + "-" + invoiceId + "";
                 }
                 con = new SqlConnection(cs.DBConn);
                 string cb = "insert into RefNumForInvoice(Code,SClientId,SQN,QuotationId,InvoiceId,RefInvoiceNo) VALUES (@d1,@d2,@d3,@d4,@d5,@d6)";
                 cmd = new SqlCommand(cb);
                 cmd.Connection = con;
-                cmd.Parameters.AddWithValue("d1", "INV");
+                cmd.Parameters.AddWithValue("d1", "OIA-INV");
                 cmd.Parameters.AddWithValue("d2", sclientId);
                 cmd.Parameters.AddWithValue("d3", sQN);
                 cmd.Parameters.AddWithValue("d4", quotationId);
@@ -179,7 +179,6 @@ namespace BillsReceivableSystem.UI
             {
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void SaveInvoice()
@@ -336,6 +335,13 @@ namespace BillsReceivableSystem.UI
                 cmbQuotation.ResetText();
                 this.BeginInvoke(new ChangeFocusDelegate(changeFocus), cmbQuotation);
             }
+        }
+
+        private void Invoice_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            MainUI frm3 = new MainUI();
+            frm3.Show();
         } 
     }
 }
