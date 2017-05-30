@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewInvoice));
             this.label2 = new System.Windows.Forms.Label();
             this.txtDeliveryNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -379,6 +380,7 @@
             this.Controls.Add(this.lblCellPhone);
             this.Controls.Add(this.txtRP);
             this.Controls.Add(this.lblRespondentPerson);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewInvoice";

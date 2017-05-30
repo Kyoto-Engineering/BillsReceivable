@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnInvoiceList = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.btnRegistration = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnInvoiceList = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,18 @@
             this.groupBox1.Size = new System.Drawing.Size(161, 483);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            // 
+            // btnInvoiceList
+            // 
+            this.btnInvoiceList.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnInvoiceList.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoiceList.Location = new System.Drawing.Point(15, 208);
+            this.btnInvoiceList.Name = "btnInvoiceList";
+            this.btnInvoiceList.Size = new System.Drawing.Size(127, 73);
+            this.btnInvoiceList.TabIndex = 3;
+            this.btnInvoiceList.Text = "Invoice List";
+            this.btnInvoiceList.UseVisualStyleBackColor = false;
+            this.btnInvoiceList.Click += new System.EventHandler(this.btnInvoiceList_Click);
             // 
             // btnInvoice
             // 
@@ -101,18 +114,6 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // btnInvoiceList
-            // 
-            this.btnInvoiceList.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnInvoiceList.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvoiceList.Location = new System.Drawing.Point(15, 208);
-            this.btnInvoiceList.Name = "btnInvoiceList";
-            this.btnInvoiceList.Size = new System.Drawing.Size(127, 73);
-            this.btnInvoiceList.TabIndex = 3;
-            this.btnInvoiceList.Text = "Invoice List";
-            this.btnInvoiceList.UseVisualStyleBackColor = false;
-            this.btnInvoiceList.Click += new System.EventHandler(this.btnInvoiceList_Click);
-            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,6 +124,7 @@
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainUI";
