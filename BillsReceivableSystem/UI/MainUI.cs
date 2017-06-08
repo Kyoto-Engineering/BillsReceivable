@@ -21,8 +21,8 @@ namespace BillsReceivableSystem.UI
         private void btnInvoice_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Invoice frm1 = new Invoice();
-            frm1.Show();
+            NewInvoice frm5 = new NewInvoice();
+            frm5.Show();
         }
 
 
@@ -48,7 +48,7 @@ namespace BillsReceivableSystem.UI
         private void btnInvoiceList_Click(object sender, EventArgs e)
         {
             this.Hide();
-            InvoiceList frm1 = new InvoiceList();
+            frmBillEntry frm1 = new frmBillEntry();
             frm1.Show();
         }
     }

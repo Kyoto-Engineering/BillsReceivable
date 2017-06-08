@@ -60,7 +60,7 @@
             this.btnInvoiceList.Name = "btnInvoiceList";
             this.btnInvoiceList.Size = new System.Drawing.Size(127, 73);
             this.btnInvoiceList.TabIndex = 3;
-            this.btnInvoiceList.Text = "Invoice List";
+            this.btnInvoiceList.Text = "Bill Entry";
             this.btnInvoiceList.UseVisualStyleBackColor = false;
             this.btnInvoiceList.Click += new System.EventHandler(this.btnInvoiceList_Click);
             // 

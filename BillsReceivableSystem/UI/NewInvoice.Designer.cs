@@ -64,11 +64,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label2.Location = new System.Drawing.Point(526, 30);
+            this.label2.Location = new System.Drawing.Point(418, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 31);
+            this.label2.Size = new System.Drawing.Size(275, 31);
             this.label2.TabIndex = 206;
-            this.label2.Text = "Invoice";
+            this.label2.Text = "Invoice Creation Form";
             // 
             // txtDeliveryNo
             // 
@@ -279,9 +279,9 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.Coral;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(974, 347);
+            this.btnSave.Location = new System.Drawing.Point(956, 347);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(97, 68);
+            this.btnSave.Size = new System.Drawing.Size(115, 74);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Generate Invoice";
             this.btnSave.UseVisualStyleBackColor = false;
