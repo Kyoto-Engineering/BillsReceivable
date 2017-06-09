@@ -24,7 +24,8 @@ namespace BillsReceivableSystem
         private SqlCommand cmd;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public int btype_id, nameOfBillId, bReceivableFromId, billId, billTransactionId; 
+        public int btype_id, nameOfBillId, billId, billTransactionId;
+        public Nullable<Int64> bReceivableFromId;
         public string user_id,inpb=null;
         private delegate void ChangeFocusDelegate(Control ctl);
         
@@ -48,7 +49,10 @@ namespace BillsReceivableSystem
         }
        
         private void ClearData()
-        {        
+        {
+            dtpBillDate.ResetText();
+            dtpBillReceivedDate.ResetText();
+            dtpDueDate.ResetText();    
             cmbReceivableFrom.Items.Clear();
             cmbReceivableFrom.SelectedIndex = -1;
             txtInvoiceNo.Clear();
@@ -195,8 +199,12 @@ namespace BillsReceivableSystem
               
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@d1", billTransactionId);
-                cmd.Parameters.AddWithValue("@d2", dtpFrom.Value);
-                cmd.Parameters.AddWithValue("@d3", dtpTo.Value);
+                cmd.Parameters.Add(new SqlParameter("@d2",
+                    !dtpFrom.Checked ? (object)DBNull.Value : dtpFrom.Value.Date));
+                cmd.Parameters.Add(new SqlParameter("@d3",
+                    !dtpTo.Checked ? (object)DBNull.Value : dtpTo.Value.Date));
+                //cmd.Parameters.AddWithValue("@d2", dtpFrom.Value);
+                //cmd.Parameters.AddWithValue("@d3", dtpTo.Value);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -248,15 +256,21 @@ namespace BillsReceivableSystem
                     string.IsNullOrEmpty(cmbPaymentMethod.Text) ? (object)DBNull.Value : cmbPaymentMethod.Text));
 
                 cmd.Parameters.AddWithValue("@d4", Convert.ToDecimal(txtAmount.Text));
-                cmd.Parameters.AddWithValue("@d5", dtpBillDate.Value);
-                cmd.Parameters.AddWithValue("@d6", dtpBillReceivedDate.Value);
-                cmd.Parameters.AddWithValue("@d7", dtpDueDate.Value);
+                cmd.Parameters.Add(new SqlParameter("@d5",
+                    !dtpBillDate.Checked ? (object)DBNull.Value : dtpBillDate.Value.Date));
+                cmd.Parameters.Add(new SqlParameter("@d6",
+                    !dtpBillReceivedDate.Checked ? (object)DBNull.Value : dtpBillReceivedDate.Value.Date));
+                cmd.Parameters.Add(new SqlParameter("@d7",
+                    !dtpDueDate.Checked ? (object)DBNull.Value : dtpDueDate.Value.Date));
+                //cmd.Parameters.AddWithValue("@d5", dtpBillDate.Value);
+                //cmd.Parameters.AddWithValue("@d6", dtpBillReceivedDate.Value);
+                //cmd.Parameters.AddWithValue("@d7", dtpDueDate.Value);
                 //cmd.Parameters.AddWithValue("@d8", (object)bReceivableFromId ?? DBNull.Value);
                 cmd.Parameters.AddWithValue("@d8", bReceivableFromId);
-
-                cmd.Parameters.AddWithValue("@d9", txtInvoiceNo.Text);
-                cmd.Parameters.Add(new SqlParameter("@d3",
-                    string.IsNullOrEmpty(cmbPaymentMethod.Text) ? (object)DBNull.Value : cmbPaymentMethod.Text));
+                cmd.Parameters.Add(new SqlParameter("@d9",
+                    string.IsNullOrEmpty(txtInvoiceNo.Text) ? (object)DBNull.Value : txtInvoiceNo.Text));
+                //cmd.Parameters.AddWithValue("@d9", txtInvoiceNo.Text);
+               
                 cmd.Parameters.AddWithValue("@d10", user_id);
                 
                              
@@ -294,54 +308,8 @@ namespace BillsReceivableSystem
         
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cmbReceivableFrom.Text))
-            {
-                MessageBox.Show("Please  enter receivable From Name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-
-            else if (string.IsNullOrWhiteSpace(txtAmount.Text))
-            {
-                MessageBox.Show("Please  enter Amount", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-
-            else if (string.IsNullOrWhiteSpace(cmbPaymentMethod.Text))
-            {
-                MessageBox.Show("Please Select Payment Method", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-
-            else if (string.IsNullOrWhiteSpace(cmbBillType.Text))
-            {
-                MessageBox.Show("Please Select Type of Bill", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-
-            else if (string.IsNullOrWhiteSpace(cmbBillPurpose.Text))
-            {
-                MessageBox.Show("Please Select Bill Purpose", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
-            }
-
-            else if (string.IsNullOrWhiteSpace(txtBillNarrative.Text))
-            {
-                MessageBox.Show("Please  enter Bill Narrative", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-
-            else if (string.IsNullOrWhiteSpace(ContactPersontextBox.Text))
-            {
-                MessageBox.Show("Please enter Contact Person Name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-            else if (string.IsNullOrWhiteSpace(PhonetextBox.Text))
-            {
-                MessageBox.Show("Please enter Phone Number", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            else
-            {
+            if(validateControlls())
+            { 
                 SaveBillTransaction();
 
                 if (!string.IsNullOrWhiteSpace(txtNote.Text))
@@ -355,9 +323,68 @@ namespace BillsReceivableSystem
                 }
                 MessageBox.Show("Saved successfully", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearData();
+               
                 ReceivableFrom();
                 cmbReceivableFrom.ResetText();
             }            
+        }
+
+        private bool validateControlls()
+        {
+            bool validate = true;
+            if (string.IsNullOrWhiteSpace(cmbReceivableFrom.Text))
+            {
+                MessageBox.Show("Please  enter receivable From Name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                cmbReceivableFrom.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(txtAmount.Text))
+            {
+                MessageBox.Show("Please  enter Amount", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                txtAmount.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(cmbPaymentMethod.Text))
+            {
+                MessageBox.Show("Please Select Payment Method", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                cmbPaymentMethod.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(cmbBillType.Text))
+            {
+                MessageBox.Show("Please Select Type of Bill", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                cmbBillType.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(cmbBillPurpose.Text))
+            {
+                MessageBox.Show("Please Select Bill Purpose", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                cmbBillPurpose.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(ContactPersontextBox.Text))
+            {
+                MessageBox.Show("Please enter Contact Person Name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                ContactPersontextBox.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(PhonetextBox.Text))
+            {
+                MessageBox.Show("Please enter Phone Number", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                PhonetextBox.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(txtBillNarrative.Text))
+            {
+                MessageBox.Show("Please  enter Bill Narrative", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                txtBillNarrative.Focus();
+            }
+            return validate;
         }
 
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
@@ -383,34 +410,13 @@ namespace BillsReceivableSystem
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        //private void browseButton_Click(object sender, EventArgs e)
-        //{
-            //try
-            //{
-            //    var _with1 = openFileDialog1;
-
-            //    _with1.Filter = ("Image Files |*.png; *.bmp; *.jpg;*.jpeg; *.gif;");
-            //    _with1.FilterIndex = 4;
-
-            //    openFileDialog1.FileName = "";
-
-            //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //    {
-            //        txtpictureBox.Image = Image.FromFile(openFileDialog1.FileName);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-        //}
-
         private void frmBillEntry_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Dispose();
+          
             MainUI frm3 = new MainUI();
-            frm3.Show();
+            this.Visible = false;
+            frm3.ShowDialog();
+            this.Visible = true;
         }
 
         private void cmbBillPurpose_Leave(object sender, EventArgs e)
@@ -483,12 +489,12 @@ namespace BillsReceivableSystem
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
                     cmd = con.CreateCommand();
-                    cmd.CommandText = "SELECT BillsFromName from BillsFrom WHERE BillsFromName= '" + cmbReceivableFrom.Text + "'";
+                    cmd.CommandText = "SELECT BillsFromId from BillsFrom WHERE BillsFromName= '" + cmbReceivableFrom.Text + "'";
 
                     rdr = cmd.ExecuteReader();
                     if (rdr.Read())
                     {
-                        bReceivableFromId = rdr.GetInt32(0);
+                        bReceivableFromId = Convert.ToInt64(rdr["BillsFromId"]);
                     }
                     if ((rdr != null))
                     {
@@ -582,6 +588,7 @@ namespace BillsReceivableSystem
                             cmbBillPurpose.Items.Clear();
                             BillPurposeLoad();
                             cmbBillPurpose.SelectedText = inpb;
+                            ContactPersontextBox.Focus();
                         }
                         catch (Exception ex)
                         {
@@ -620,12 +627,20 @@ namespace BillsReceivableSystem
             }
         }
 
-       
-
-       
-
-       
-     
+        private void InvoiceNobutton_Click(object sender, EventArgs e)
+        {
+            using (var form = new InvoiceNoSelectionGrid())
+            {
+                this.Visible = false;
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string val = form.ReturnValue1; //values preserved after close
+                    this.txtInvoiceNo.Text = val;
+                }
+                this.Visible = true;
+            }
+        }
     }
  }
 

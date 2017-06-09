@@ -66,6 +66,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.PhonetextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.InvoiceNobutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtpictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,22 +96,22 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.Blue;
-            this.lblDescription.Location = new System.Drawing.Point(675, 301);
+            this.lblDescription.Location = new System.Drawing.Point(644, 300);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(132, 22);
+            this.lblDescription.Size = new System.Drawing.Size(163, 22);
             this.lblDescription.TabIndex = 20;
-            this.lblDescription.Text = "Bill Narrative :";
+            this.lblDescription.Text = "Invoice Narrative :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(524, 16);
+            this.label1.Location = new System.Drawing.Point(468, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 31);
+            this.label1.Size = new System.Drawing.Size(264, 31);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Bill Entry";
+            this.label1.Text = "Receivable Bill Entry";
             // 
             // lblNote
             // 
@@ -193,12 +194,14 @@
             // dtpBillDate
             // 
             this.dtpBillDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.dtpBillDate.Checked = false;
             this.dtpBillDate.CustomFormat = " dd/MM/yyyy";
             this.dtpBillDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBillDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBillDate.Location = new System.Drawing.Point(272, 76);
             this.dtpBillDate.Name = "dtpBillDate";
-            this.dtpBillDate.Size = new System.Drawing.Size(142, 29);
+            this.dtpBillDate.ShowCheckBox = true;
+            this.dtpBillDate.Size = new System.Drawing.Size(200, 29);
             this.dtpBillDate.TabIndex = 0;
             // 
             // lblPayableTo
@@ -269,12 +272,14 @@
             // 
             // dtpDueDate
             // 
+            this.dtpDueDate.Checked = false;
             this.dtpDueDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDueDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDate.Location = new System.Drawing.Point(272, 145);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(144, 29);
+            this.dtpDueDate.ShowCheckBox = true;
+            this.dtpDueDate.Size = new System.Drawing.Size(202, 29);
             this.dtpDueDate.TabIndex = 2;
             // 
             // lblBillReceivedDate
@@ -290,12 +295,14 @@
             // 
             // dtpBillReceivedDate
             // 
+            this.dtpBillReceivedDate.Checked = false;
             this.dtpBillReceivedDate.CustomFormat = "dd/MM/yyyy";
             this.dtpBillReceivedDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBillReceivedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBillReceivedDate.Location = new System.Drawing.Point(272, 111);
             this.dtpBillReceivedDate.Name = "dtpBillReceivedDate";
-            this.dtpBillReceivedDate.Size = new System.Drawing.Size(144, 29);
+            this.dtpBillReceivedDate.ShowCheckBox = true;
+            this.dtpBillReceivedDate.Size = new System.Drawing.Size(202, 29);
             this.dtpBillReceivedDate.TabIndex = 1;
             // 
             // cmbReceivableFrom
@@ -339,22 +346,26 @@
             // 
             // dtpFrom
             // 
+            this.dtpFrom.Checked = false;
             this.dtpFrom.CustomFormat = " dd/MM/yyyy";
             this.dtpFrom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFrom.Location = new System.Drawing.Point(209, 356);
             this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.ShowCheckBox = true;
             this.dtpFrom.Size = new System.Drawing.Size(134, 29);
             this.dtpFrom.TabIndex = 8;
             this.dtpFrom.Visible = false;
             // 
             // dtpTo
             // 
+            this.dtpTo.Checked = false;
             this.dtpTo.CustomFormat = " dd/MM/yyyy";
             this.dtpTo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTo.Location = new System.Drawing.Point(405, 356);
             this.dtpTo.Name = "dtpTo";
+            this.dtpTo.ShowCheckBox = true;
             this.dtpTo.Size = new System.Drawing.Size(134, 29);
             this.dtpTo.TabIndex = 9;
             this.dtpTo.Visible = false;
@@ -383,11 +394,11 @@
             this.lblBillImage.AutoSize = true;
             this.lblBillImage.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBillImage.ForeColor = System.Drawing.Color.Blue;
-            this.lblBillImage.Location = new System.Drawing.Point(701, 68);
+            this.lblBillImage.Location = new System.Drawing.Point(672, 68);
             this.lblBillImage.Name = "lblBillImage";
-            this.lblBillImage.Size = new System.Drawing.Size(104, 22);
+            this.lblBillImage.Size = new System.Drawing.Size(135, 22);
             this.lblBillImage.TabIndex = 49;
-            this.lblBillImage.Text = "Bill Image :";
+            this.lblBillImage.Text = "Invoice Image :";
             // 
             // txtpictureBox
             // 
@@ -462,6 +473,18 @@
             this.label4.TabIndex = 57;
             this.label4.Text = "Pnone Number :";
             // 
+            // InvoiceNobutton
+            // 
+            this.InvoiceNobutton.BackColor = System.Drawing.Color.Yellow;
+            this.InvoiceNobutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InvoiceNobutton.Location = new System.Drawing.Point(547, 178);
+            this.InvoiceNobutton.Name = "InvoiceNobutton";
+            this.InvoiceNobutton.Size = new System.Drawing.Size(52, 30);
+            this.InvoiceNobutton.TabIndex = 58;
+            this.InvoiceNobutton.Text = ">>";
+            this.InvoiceNobutton.UseVisualStyleBackColor = false;
+            this.InvoiceNobutton.Click += new System.EventHandler(this.InvoiceNobutton_Click);
+            // 
             // frmBillEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -470,6 +493,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1238, 655);
+            this.Controls.Add(this.InvoiceNobutton);
             this.Controls.Add(this.PhonetextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ContactPersontextBox);
@@ -510,7 +534,6 @@
             this.Name = "frmBillEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill Entry";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBillEntry_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtpictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -558,6 +581,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox PhonetextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button InvoiceNobutton;
     }
 }
 

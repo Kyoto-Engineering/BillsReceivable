@@ -43,9 +43,11 @@ namespace BillsReceivableSystem.LoginUI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           
             frmLogin frm = new frmLogin();
-            frm.Show();
+            this.Visible = false;
+            frm.ShowDialog();
+            this.Visible = true;
         }
 
         private void userButton_Click(object sender, EventArgs e)

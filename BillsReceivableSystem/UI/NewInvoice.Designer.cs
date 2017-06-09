@@ -131,11 +131,13 @@
             // 
             // dtpPromisedDate
             // 
+            this.dtpPromisedDate.Checked = false;
             this.dtpPromisedDate.CustomFormat = "dd/MM/yyyy";
             this.dtpPromisedDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpPromisedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPromisedDate.Location = new System.Drawing.Point(817, 276);
             this.dtpPromisedDate.Name = "dtpPromisedDate";
+            this.dtpPromisedDate.ShowCheckBox = true;
             this.dtpPromisedDate.Size = new System.Drawing.Size(254, 29);
             this.dtpPromisedDate.TabIndex = 12;
             this.dtpPromisedDate.ValueChanged += new System.EventHandler(this.dtpPromisedDate_ValueChanged);
@@ -192,11 +194,13 @@
             // 
             // dtpDueDate
             // 
+            this.dtpDueDate.Checked = false;
             this.dtpDueDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDueDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDate.Location = new System.Drawing.Point(817, 136);
             this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.ShowCheckBox = true;
             this.dtpDueDate.Size = new System.Drawing.Size(254, 29);
             this.dtpDueDate.TabIndex = 9;
             this.dtpDueDate.ValueChanged += new System.EventHandler(this.dtpDueDate_ValueChanged);
@@ -214,11 +218,13 @@
             // 
             // dtpInvoiceDate
             // 
+            this.dtpInvoiceDate.Checked = false;
             this.dtpInvoiceDate.CustomFormat = "dd/MM/yyyy";
             this.dtpInvoiceDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpInvoiceDate.Location = new System.Drawing.Point(817, 89);
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
+            this.dtpInvoiceDate.ShowCheckBox = true;
             this.dtpInvoiceDate.Size = new System.Drawing.Size(254, 29);
             this.dtpInvoiceDate.TabIndex = 8;
             this.dtpInvoiceDate.ValueChanged += new System.EventHandler(this.dtpInvoiceDate_ValueChanged);
@@ -384,7 +390,6 @@
             this.Name = "NewInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewInvoice";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewInvoice_FormClosed);
             this.Load += new System.EventHandler(this.NewInvoice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

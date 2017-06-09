@@ -119,9 +119,9 @@ namespace BillsReceivableSystem.LoginUI
                         MainUI frm = new MainUI();
                         this.Visible = false;
                         frm.ShowDialog();
-                        //this.Visible = true;
-                        //txt1UserName.Clear();
-                        //txt1Password.Clear();
+                        this.Visible = true;
+                        txt1UserName.Clear();
+                        txt1Password.Clear();
 
                     }
                     //if (txtUserType.Text.Trim() == "User")
@@ -139,9 +139,9 @@ namespace BillsReceivableSystem.LoginUI
                         MainUI frm = new MainUI();
                         this.Visible = false;
                         frm.ShowDialog();
-                        //this.Visible = true;
-                        //txt1UserName.Clear();
-                        //txt1Password.Clear();
+                        this.Visible = true;
+                        txt1UserName.Clear();
+                        txt1Password.Clear();
 
                     }
                 }

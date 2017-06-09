@@ -20,36 +20,55 @@ namespace BillsReceivableSystem.UI
 
         private void btnInvoice_Click(object sender, EventArgs e)
         {
-            this.Hide();
+         
             NewInvoice frm5 = new NewInvoice();
-            frm5.Show();
+            this.Visible = false;
+            frm5.ShowDialog();
+            this.Visible = true;
         }
 
 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
-            this.Hide();
+          
             frmRegistration frm2 = new frmRegistration();
-            frm2.Show();
+            this.Visible = false;
+            frm2.ShowDialog();
+            this.Visible = true;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            frmLogin frm = new frmLogin();
-            frm.Show();
-        }
-
-        private void MainUI_Load(object sender, EventArgs e)
+            //frmLogin frm = new frmLogin();
+            //this.Visible = false;
+            //frm.ShowDialog();
+            //this.Visible = true;
+        }     
+        private void billEntrybutton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnInvoiceList_Click(object sender, EventArgs e)
-        {
-            this.Hide();
             frmBillEntry frm1 = new frmBillEntry();
-            frm1.Show();
+            this.Visible = false;
+            frm1.ShowDialog();
+            this.Visible = true;
         }
+
+        private void invoiceListbutton_Click(object sender, EventArgs e)
+        {
+            InvoiceList invlst = new InvoiceList();
+            this.Visible = false;
+            invlst.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllBillList invlst = new AllBillList();
+            this.Visible = false;
+            invlst.ShowDialog();
+            this.Visible = true;
+        }
+
+        
     }
 }

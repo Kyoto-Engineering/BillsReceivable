@@ -41,12 +41,13 @@
             this.txtUserType = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProgressBar1
             // 
-            this.ProgressBar1.Location = new System.Drawing.Point(137, 397);
+            this.ProgressBar1.Location = new System.Drawing.Point(44, 397);
             this.ProgressBar1.Name = "ProgressBar1";
             this.ProgressBar1.Size = new System.Drawing.Size(100, 10);
             this.ProgressBar1.TabIndex = 116;
@@ -60,7 +61,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.groupBox1.Location = new System.Drawing.Point(220, 122);
+            this.groupBox1.Location = new System.Drawing.Point(81, 122);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(477, 187);
             this.groupBox1.TabIndex = 109;
@@ -110,7 +111,7 @@
             // 
             // departmentTextBox
             // 
-            this.departmentTextBox.Location = new System.Drawing.Point(536, 96);
+            this.departmentTextBox.Location = new System.Drawing.Point(371, 96);
             this.departmentTextBox.Name = "departmentTextBox";
             this.departmentTextBox.Size = new System.Drawing.Size(27, 20);
             this.departmentTextBox.TabIndex = 115;
@@ -118,7 +119,7 @@
             // 
             // designationTextBox
             // 
-            this.designationTextBox.Location = new System.Drawing.Point(463, 96);
+            this.designationTextBox.Location = new System.Drawing.Point(298, 96);
             this.designationTextBox.Name = "designationTextBox";
             this.designationTextBox.Size = new System.Drawing.Size(34, 20);
             this.designationTextBox.TabIndex = 114;
@@ -126,7 +127,7 @@
             // 
             // fullNameTextBox
             // 
-            this.fullNameTextBox.Location = new System.Drawing.Point(423, 96);
+            this.fullNameTextBox.Location = new System.Drawing.Point(258, 96);
             this.fullNameTextBox.Name = "fullNameTextBox";
             this.fullNameTextBox.Size = new System.Drawing.Size(25, 20);
             this.fullNameTextBox.TabIndex = 113;
@@ -149,7 +150,7 @@
             this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.cancelButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.Red;
-            this.cancelButton.Location = new System.Drawing.Point(538, 328);
+            this.cancelButton.Location = new System.Drawing.Point(407, 328);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(106, 46);
             this.cancelButton.TabIndex = 111;
@@ -162,7 +163,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(393, 328);
+            this.button1.Location = new System.Drawing.Point(262, 328);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 46);
             this.button1.TabIndex = 110;
@@ -170,12 +171,25 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Moccasin;
+            this.label1.Location = new System.Drawing.Point(153, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(305, 32);
+            this.label1.TabIndex = 117;
+            this.label1.Text = "Receivable Bills System";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(834, 503);
+            this.ClientSize = new System.Drawing.Size(641, 467);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ProgressBar1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.departmentTextBox);
@@ -210,6 +224,7 @@
         private System.Windows.Forms.TextBox txtUserType;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
 
     }
 }

@@ -38,21 +38,46 @@ namespace BillsReceivableSystem.UI
                 con.Open();
                 String query = "insert into Invoice(InvoiceDate, DueDate, QuotationNo, GrossReceive, NetReceive, PromisedDate, WorkOrderNo, DeliveryNo, InvoiceTo, Address, LPhn, RP, CPhn) values (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@d1", dtpInvoiceDate.Value);
-                cmd.Parameters.AddWithValue("@d2", dtpDueDate.Value);
+                //cmd.Parameters.AddWithValue("@d1", dtpInvoiceDate.Value);
+                cmd.Parameters.Add(new SqlParameter("@d1",
+                    !dtpInvoiceDate.Checked ? (object) DBNull.Value : dtpInvoiceDate.Value.Date));
+                cmd.Parameters.Add(new SqlParameter("@d2",
+                    !dtpDueDate.Checked ? (object) DBNull.Value : dtpDueDate.Value.Date));
+                //cmd.Parameters.AddWithValue("@d2", dtpDueDate.Value);
                 //cmd.Parameters.AddWithValue("@d3", user_id);
-                cmd.Parameters.AddWithValue("@d3", txtQuotation.Text);
+                cmd.Parameters.Add(new SqlParameter("@d3",
+                    string.IsNullOrWhiteSpace(txtQuotation.Text) ? (object) DBNull.Value : txtQuotation.Text));
+                //cmd.Parameters.AddWithValue("@d3", txtQuotation.Text);
+                //cmd.Parameters.Add(new SqlParameter("@d4",
+                //    string.IsNullOrWhiteSpace(txtGrossReceivable.Text) ? (object)DBNull.Value : txtGrossReceivable.Text));
                 cmd.Parameters.AddWithValue("@d4", Convert.ToDecimal(txtGrossReceivable.Text));
+                //cmd.Parameters.Add(new SqlParameter("@d5",
+                //    string.IsNullOrWhiteSpace(txtNetReceivable.Text) ? (object)DBNull.Value : txtNetReceivable.Text));
                 cmd.Parameters.AddWithValue("@d5", Convert.ToDecimal(txtNetReceivable.Text));
-                cmd.Parameters.AddWithValue("@d6", dtpPromisedDate.Value);
-                cmd.Parameters.AddWithValue("@d7", txtWorkOrderNo.Text);
-                cmd.Parameters.AddWithValue("@d8", txtDeliveryNo.Text);
-                cmd.Parameters.AddWithValue("@d9", txtInvoiceParty.Text);
-                cmd.Parameters.AddWithValue("@d10", txtPayerAddress.Text);
-                cmd.Parameters.AddWithValue("@d11", txtLandPhone.Text);
-                cmd.Parameters.AddWithValue("@d12", txtRP.Text);
-                cmd.Parameters.AddWithValue("@d13", txtCellPhone.Text);
-
+                cmd.Parameters.Add(new SqlParameter("@d6",
+                    !dtpPromisedDate.Checked ? (object)DBNull.Value : dtpPromisedDate.Value.Date));
+                //cmd.Parameters.AddWithValue("@d6", dtpPromisedDate.Value);
+                //cmd.Parameters.AddWithValue("@d7", txtWorkOrderNo.Text);
+                cmd.Parameters.Add(new SqlParameter("@d7",
+                    string.IsNullOrWhiteSpace(txtWorkOrderNo.Text) ? (object)DBNull.Value : txtWorkOrderNo.Text));
+                //cmd.Parameters.AddWithValue("@d8", txtDeliveryNo.Text);
+                cmd.Parameters.Add(new SqlParameter("@d8",
+                    string.IsNullOrWhiteSpace(txtDeliveryNo.Text) ? (object)DBNull.Value : txtDeliveryNo.Text));
+                //cmd.Parameters.AddWithValue("@d9", txtInvoiceParty.Text);
+                cmd.Parameters.Add(new SqlParameter("@d9",
+                    string.IsNullOrWhiteSpace(txtInvoiceParty.Text) ? (object)DBNull.Value : txtInvoiceParty.Text));
+                //cmd.Parameters.AddWithValue("@d10", txtPayerAddress.Text);
+                cmd.Parameters.Add(new SqlParameter("@d10",
+                    string.IsNullOrWhiteSpace(txtPayerAddress.Text) ? (object)DBNull.Value : txtPayerAddress.Text));
+                //cmd.Parameters.AddWithValue("@d11", txtLandPhone.Text);
+                cmd.Parameters.Add(new SqlParameter("@d11",
+                    string.IsNullOrWhiteSpace(txtLandPhone.Text) ? (object)DBNull.Value : txtLandPhone.Text));
+                //cmd.Parameters.AddWithValue("@d12", txtRP.Text);
+                cmd.Parameters.Add(new SqlParameter("@d12",
+                    string.IsNullOrWhiteSpace(txtRP.Text) ? (object)DBNull.Value : txtRP.Text));
+                //cmd.Parameters.AddWithValue("@d13", txtCellPhone.Text);
+                cmd.Parameters.Add(new SqlParameter("@d13",
+                    string.IsNullOrWhiteSpace(txtCellPhone.Text) ? (object)DBNull.Value : txtCellPhone.Text));
                 //invoiceId = (int)cmd.ExecuteScalar();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -66,51 +91,9 @@ namespace BillsReceivableSystem.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtInvoiceParty.Text))
-            {
-                MessageBox.Show("Please enter Invoice Party", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtInvoiceParty);
-            }
-            
-            else if (string.IsNullOrWhiteSpace(txtPayerAddress.Text))
-            {
-                MessageBox.Show("Please enter Payer Address","error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtPayerAddress);
-            }
 
-            else if (string.IsNullOrWhiteSpace(txtLandPhone.Text))
-            {
-                MessageBox.Show("Please enter Land Phone Number", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtLandPhone);
-            }
 
-            else if (string.IsNullOrWhiteSpace(txtRP.Text))
-            {
-                MessageBox.Show("Please enter Respondent Person name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtRP);
-            }
-
-            else if (string.IsNullOrWhiteSpace(txtCellPhone.Text))
-            {
-                MessageBox.Show("Please enter Cell Phone Number", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtCellPhone);
-            }
-
-            else if (string.IsNullOrWhiteSpace(txtGrossReceivable.Text))
-            {
-                MessageBox.Show("Please  enter Gross Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtGrossReceivable);
-
-            }
-
-            else if (string.IsNullOrWhiteSpace(txtNetReceivable.Text))
-            {
-                MessageBox.Show("Please  enter Net Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtNetReceivable);
-
-            }
-
-            else
+            if (validatecontrolls())
             {
                 SaveInvoice();
                 MessageBox.Show("Successfully Generated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -119,6 +102,61 @@ namespace BillsReceivableSystem.UI
             }
         }
 
+
+        private bool validatecontrolls()
+        {
+            bool validate = true;
+            if (string.IsNullOrWhiteSpace(txtInvoiceParty.Text))
+            {
+                MessageBox.Show("Please enter Invoice Party", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtInvoiceParty);
+            }
+
+            else if (string.IsNullOrWhiteSpace(txtPayerAddress.Text))
+            {
+                MessageBox.Show("Please enter Payer Address", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtPayerAddress);
+            }
+
+            //else if (string.IsNullOrWhiteSpace(txtLandPhone.Text))
+            //{
+            //    MessageBox.Show("Please enter Land Phone Number", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    validate = false;
+            //    this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtLandPhone);
+            //}
+
+            else if (string.IsNullOrWhiteSpace(txtRP.Text))
+            {
+                MessageBox.Show("Please enter Respondent Person name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtRP);
+            }
+
+            else if (string.IsNullOrWhiteSpace(txtCellPhone.Text))
+            {
+                MessageBox.Show("Please enter Cell Phone Number", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtCellPhone);
+            }
+
+            else if (string.IsNullOrWhiteSpace(txtGrossReceivable.Text))
+            {
+                MessageBox.Show("Please  enter Gross Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtGrossReceivable);
+
+            }
+
+            else if (string.IsNullOrWhiteSpace(txtNetReceivable.Text))
+            {
+                MessageBox.Show("Please  enter Net Receivable", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validate = false;
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtNetReceivable);
+            }
+           return validate;
+        }
         private void ClearData()
         {
             txtQuotation.Clear();
@@ -166,29 +204,29 @@ namespace BillsReceivableSystem.UI
 
         private void dtpInvoiceDate_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpInvoiceDate.Value > DateTime.Now)
-            {
-                MessageBox.Show("Should not be exceed Date Time from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpInvoiceDate.ResetText();
-            }
+            //if (dtpInvoiceDate.Value > DateTime.Now)
+            //{
+            //    MessageBox.Show("Should not be exceed Date Time from today", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    dtpInvoiceDate.ResetText();
+            //}
         }
 
         private void dtpDueDate_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpInvoiceDate.Value > dtpDueDate.Value)
-            {
-                MessageBox.Show("Due Date Should be grater than or Equal to Invoice Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpDueDate.ResetText();
-            } 
+            //if (dtpInvoiceDate.Value > dtpDueDate.Value)
+            //{
+            //    MessageBox.Show("Due Date Should be grater than or Equal to Invoice Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    dtpDueDate.ResetText();
+            //} 
         }
 
         private void dtpPromisedDate_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpDueDate.Value > dtpPromisedDate.Value)
-            {
-                MessageBox.Show("Promised Date Should be grater than or Equal to Due Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                dtpPromisedDate.ResetText();
-            } 
+            //if (dtpDueDate.Value > dtpPromisedDate.Value)
+            //{
+            //    MessageBox.Show("Promised Date Should be grater than or Equal to Due Date", "Warrning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    dtpPromisedDate.ResetText();
+            //} 
         }
 
         private void txtLandPhone_KeyPress(object sender, KeyPressEventArgs e)
@@ -222,9 +260,11 @@ namespace BillsReceivableSystem.UI
 
         private void NewInvoice_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Dispose();
+          
             MainUI frm3 = new MainUI();
-            frm3.Show();
+            this.Visible = false;
+            frm3.ShowDialog();
+            this.Visible = true;
         }
 
         

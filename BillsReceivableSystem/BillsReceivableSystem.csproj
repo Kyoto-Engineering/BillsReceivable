@@ -60,6 +60,12 @@
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\InputBox.cs" />
+    <Compile Include="UI\AllBillList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AllBillList.Designer.cs">
+      <DependentUpon>AllBillList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     </Compile>
     <Compile Include="UI\InvoiceList.Designer.cs">
       <DependentUpon>InvoiceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InvoiceNoSelectionGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InvoiceNoSelectionGrid.Designer.cs">
+      <DependentUpon>InvoiceNoSelectionGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\MainUI.cs">
       <SubType>Form</SubType>
@@ -113,6 +125,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\AllBillList.resx">
+      <DependentUpon>AllBillList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\InvoiceList.resx">
       <DependentUpon>InvoiceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InvoiceNoSelectionGrid.resx">
+      <DependentUpon>InvoiceNoSelectionGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
