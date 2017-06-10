@@ -363,7 +363,7 @@
             this.dtpTo.CustomFormat = " dd/MM/yyyy";
             this.dtpTo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(405, 356);
+            this.dtpTo.Location = new System.Drawing.Point(405, 355);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.ShowCheckBox = true;
             this.dtpTo.Size = new System.Drawing.Size(134, 29);
