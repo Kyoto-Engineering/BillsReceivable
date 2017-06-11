@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BillsReceivableSystem.LoginUI;
+using BillsReceivableSystem.Report;
 
 namespace BillsReceivableSystem.UI
 {
@@ -66,6 +67,14 @@ namespace BillsReceivableSystem.UI
             AllBillList invlst = new AllBillList();
             this.Visible = false;
             invlst.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReportForInvoice f2 = new ReportForInvoice();
+            this.Visible = false;
+            f2.ShowDialog();
             this.Visible = true;
         }
 
