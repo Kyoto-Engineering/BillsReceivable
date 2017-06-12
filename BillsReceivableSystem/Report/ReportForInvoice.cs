@@ -120,7 +120,7 @@ namespace BillsReceivableSystem.Report
             //	Table table = default(Table);
             var with1 = reportConInfo;
             with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "BillsReceivableDBDemo";
+            with1.DatabaseName = "BillsReceivableDB";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
             Invoices cr = new Invoices();

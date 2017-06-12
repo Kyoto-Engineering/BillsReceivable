@@ -36,26 +36,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(151, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Invoice Id :";
             // 
             // invoiceIdcomboBox
             // 
+            this.invoiceIdcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invoiceIdcomboBox.FormattingEnabled = true;
-            this.invoiceIdcomboBox.Location = new System.Drawing.Point(218, 55);
+            this.invoiceIdcomboBox.Location = new System.Drawing.Point(242, 60);
             this.invoiceIdcomboBox.Name = "invoiceIdcomboBox";
-            this.invoiceIdcomboBox.Size = new System.Drawing.Size(121, 21);
+            this.invoiceIdcomboBox.Size = new System.Drawing.Size(121, 28);
             this.invoiceIdcomboBox.TabIndex = 1;
             this.invoiceIdcomboBox.SelectedIndexChanged += new System.EventHandler(this.invoiceIdcomboBox_SelectedIndexChanged);
             // 
             // Getbutton
             // 
-            this.Getbutton.Location = new System.Drawing.Point(246, 108);
+            this.Getbutton.Location = new System.Drawing.Point(261, 113);
             this.Getbutton.Name = "Getbutton";
-            this.Getbutton.Size = new System.Drawing.Size(75, 23);
+            this.Getbutton.Size = new System.Drawing.Size(75, 35);
             this.Getbutton.TabIndex = 2;
             this.Getbutton.Text = "Get";
             this.Getbutton.UseVisualStyleBackColor = true;
@@ -65,11 +67,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 293);
+            this.ClientSize = new System.Drawing.Size(567, 293);
             this.Controls.Add(this.Getbutton);
             this.Controls.Add(this.invoiceIdcomboBox);
             this.Controls.Add(this.label1);
             this.Name = "ReportForInvoice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportForInvoice";
             this.Load += new System.EventHandler(this.ReportForInvoice_Load);
             this.ResumeLayout(false);

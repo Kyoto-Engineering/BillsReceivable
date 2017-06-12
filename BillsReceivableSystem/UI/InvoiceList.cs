@@ -28,7 +28,7 @@ namespace BillsReceivableSystem.UI
             try
             {
                 con = new SqlConnection(cs.DBConn);
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT InvoiceDate, InvoiceTo, GrossReceive, NetReceive, DueDate, PromisedDate, QuotationNo, WorkOrderNo, DeliveryNo, RP, CPhn, [Address], LPhn FROM Invoice", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT Invoice.InvoiceId, Invoice.InvoiceDate, Products.ProductDescription, Unit.UnitName, Products.UnitPrice, Products.Qty,Invoice.GrossReceive, Invoice.NetReceive, Invoice.InvoiceTo, Invoice.Address, Invoice.LPhn, Invoice.RP, Invoice.CPhn, Invoice.DueDate, Invoice.PromisedDate, Invoice.QuotationNo, Invoice.WorkOrderNo, Invoice.DeliveryNo FROM  Invoice INNER JOIN Products ON Invoice.InvoiceId = Products.InvoiceId INNER JOIN Unit ON Products.UnitId = Unit.UnitId", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 InvoiceListdataGridView.Rows.Clear();
@@ -48,6 +48,11 @@ namespace BillsReceivableSystem.UI
                     InvoiceListdataGridView.Rows[n].Cells[10].Value = item[10].ToString();
                     InvoiceListdataGridView.Rows[n].Cells[11].Value = item[11].ToString();
                     InvoiceListdataGridView.Rows[n].Cells[12].Value = item[12].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[13].Value = item[13].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[14].Value = item[14].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[15].Value = item[15].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[16].Value = item[16].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[17].Value = item[17].ToString();
                 }
 
 
@@ -79,7 +84,7 @@ namespace BillsReceivableSystem.UI
             try
             {
                 con = new SqlConnection(cs.DBConn);
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT InvoiceDate, InvoiceTo, GrossReceive, NetReceive, DueDate, PromisedDate, QuotationNo, WorkOrderNo, DeliveryNo, RP, CPhn, [Address], LPhn FROM Invoice WHERE (Invoice.InvoiceTo LIKE '" + searchTextBox.Text + "%') ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT Invoice.InvoiceId, Invoice.InvoiceDate, Products.ProductDescription, Unit.UnitName, Products.UnitPrice, Products.Qty,Invoice.GrossReceive, Invoice.NetReceive, Invoice.InvoiceTo, Invoice.Address, Invoice.LPhn, Invoice.RP, Invoice.CPhn, Invoice.DueDate, Invoice.PromisedDate, Invoice.QuotationNo, Invoice.WorkOrderNo, Invoice.DeliveryNo FROM  Invoice INNER JOIN Products ON Invoice.InvoiceId = Products.InvoiceId INNER JOIN Unit ON Products.UnitId = Unit.UnitId WHERE (Invoice.InvoiceTo LIKE '" + searchTextBox.Text + "%') ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 InvoiceListdataGridView.Rows.Clear();
@@ -99,6 +104,11 @@ namespace BillsReceivableSystem.UI
                     InvoiceListdataGridView.Rows[n].Cells[10].Value = item[10].ToString();
                     InvoiceListdataGridView.Rows[n].Cells[11].Value = item[11].ToString();
                     InvoiceListdataGridView.Rows[n].Cells[12].Value = item[12].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[13].Value = item[13].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[14].Value = item[14].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[15].Value = item[15].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[16].Value = item[16].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[17].Value = item[17].ToString();
                 }
 
 
@@ -108,6 +118,56 @@ namespace BillsReceivableSystem.UI
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void SearchInvoiceIdtextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT Invoice.InvoiceId, Invoice.InvoiceDate, Products.ProductDescription, Unit.UnitName, Products.UnitPrice, Products.Qty,Invoice.GrossReceive, Invoice.NetReceive, Invoice.InvoiceTo, Invoice.Address, Invoice.LPhn, Invoice.RP, Invoice.CPhn, Invoice.DueDate, Invoice.PromisedDate, Invoice.QuotationNo, Invoice.WorkOrderNo, Invoice.DeliveryNo FROM  Invoice INNER JOIN Products ON Invoice.InvoiceId = Products.InvoiceId INNER JOIN Unit ON Products.UnitId = Unit.UnitId WHERE (Invoice.InvoiceId LIKE '" + SearchInvoiceIdtextBox.Text + "%') ", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                InvoiceListdataGridView.Rows.Clear();
+                foreach (DataRow item in dt.Rows)
+                {
+                    int n = InvoiceListdataGridView.Rows.Add();
+                    InvoiceListdataGridView.Rows[n].Cells[0].Value = item[0].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[1].Value = item[1].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[2].Value = item[2].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[3].Value = item[3].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[4].Value = item[4].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[5].Value = item[5].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[6].Value = item[6].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[7].Value = item[7].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[8].Value = item[8].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[9].Value = item[9].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[10].Value = item[10].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[11].Value = item[11].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[12].Value = item[12].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[13].Value = item[13].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[14].Value = item[14].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[15].Value = item[15].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[16].Value = item[16].ToString();
+                    InvoiceListdataGridView.Rows[n].Cells[17].Value = item[17].ToString();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SearchInvoiceIdtextBox_Leave(object sender, EventArgs e)
+        {
+            SearchInvoiceIdtextBox.Clear();
+        }
+
+        private void searchTextBox_Leave(object sender, EventArgs e)
+        {
+            searchTextBox.Clear();
         }
 
         

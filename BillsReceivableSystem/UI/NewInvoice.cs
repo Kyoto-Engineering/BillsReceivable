@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BillsReceivableSystem.DbGateway;
 using BillsReceivableSystem.LoginUI;
+using BillsReceivableSystem.Models;
 using BillsReceivableSystem.Report;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
@@ -24,6 +25,7 @@ namespace BillsReceivableSystem.UI
         private ConnectionString cs = new ConnectionString();        
         private delegate void ChangeFocusDelegate(Control ctl);
         public int unitid, invoiceId;
+        public Nullable<Int64> customerid;
         public string userid;
         public NewInvoice()
         {
@@ -41,8 +43,9 @@ namespace BillsReceivableSystem.UI
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                String query = "insert into Invoice(InvoiceDate, DueDate, QuotationNo, GrossReceive, NetReceive, PromisedDate, WorkOrderNo, DeliveryNo, InvoiceTo, Address, LPhn, RP, CPhn, UserId) values (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13,@d14)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                String query = "insert into Invoice(CustomerId,InvoiceDate, DueDate, QuotationNo, GrossReceive, NetReceive, PromisedDate, WorkOrderNo, DeliveryNo, InvoiceTo, Address, LPhn, RP, CPhn, UserId,WORef) values (@cus,@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13,@d14,@d15)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@cus", (object)customerid ?? DBNull.Value);
                 cmd.Parameters.Add(new SqlParameter("@d1",
                     !dtpInvoiceDate.Checked ? (object) DBNull.Value : dtpInvoiceDate.Value.Date));
                 cmd.Parameters.Add(new SqlParameter("@d2",
@@ -77,6 +80,8 @@ namespace BillsReceivableSystem.UI
                 cmd.Parameters.Add(new SqlParameter("@d13",
                     string.IsNullOrWhiteSpace(txtCellPhone.Text) ? (object)DBNull.Value : txtCellPhone.Text));
                 cmd.Parameters.AddWithValue("@d14", userid);
+                cmd.Parameters.Add(new SqlParameter("@d15",
+                    string.IsNullOrWhiteSpace(WorkOrderRefcomboBox.Text) ? (object)DBNull.Value : WorkOrderRefcomboBox.Text));
                 invoiceId = (int)cmd.ExecuteScalar();
                 con.Close();
 
@@ -92,14 +97,14 @@ namespace BillsReceivableSystem.UI
         {
             if (validatecontrolls())
             {
-                SaveInvoice();
+              
                 if (listView1.Items.Count == 0)
                 {
                     MessageBox.Show("Please add to Chart first", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     DescriptionrichTextBox.Focus();
                     return;
                 }
-              
+                SaveInvoice();
                 try
                 {
                     for (int i = 0; i <= listView1.Items.Count - 1; i++)
@@ -185,7 +190,9 @@ namespace BillsReceivableSystem.UI
         }
         private void ClearData()
         {
+            CustomerIdcomboBox.SelectedIndex = -1;
             txtQuotation.Clear();
+            WorkOrderRefcomboBox.SelectedIndex = -1;
             txtWorkOrderNo.Clear();
             txtDeliveryNo.Clear();
             txtInvoiceParty.Clear();
@@ -258,7 +265,7 @@ namespace BillsReceivableSystem.UI
             //	Table table = default(Table);
             var with1 = reportConInfo;
             with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "BillsReceivableDBDemo";
+            with1.DatabaseName = "BillsReceivableDB";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
             Invoices cr = new Invoices();
@@ -284,6 +291,30 @@ namespace BillsReceivableSystem.UI
             userid = frmLogin.uId.ToString();
             this.BeginInvoke(new ChangeFocusDelegate(changeFocus), txtQuotation);
             Unit();
+            FillCusId();
+        }
+
+        private void FillCusId()
+        {
+            try
+            {
+
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ct = "select CustomerName from Customer";
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    CustomerIdcomboBox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                CustomerIdcomboBox.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Unit()
@@ -490,6 +521,102 @@ namespace BillsReceivableSystem.UI
         {
             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
                 e.Handled = true;
+        }
+
+        private void CustomerIdcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CustomerIdcomboBox.Text == "Not In The List")
+            {
+                //string input = Microsoft.VisualBasic.Interaction.InputBox("Please Input Receivable From Here", "Input Here", "", -1, -1);
+
+                string inputc = null;
+                InputBox.Show("Please Input Customer Id Here", "Inpute Here", ref inputc);
+                if (string.IsNullOrWhiteSpace(inputc))
+                {
+                    CustomerIdcomboBox.SelectedIndex = -1;
+                }
+                else
+                {
+                    con = new SqlConnection(cs.DBConn);
+                    con.Open();
+                    string ct2 = "select CustomerName from Customer where CustomerName='" + inputc + "'";
+                    cmd = new SqlCommand(ct2, con);
+                    rdr = cmd.ExecuteReader();
+                    if (rdr.Read() && !rdr.IsDBNull(0))
+                    {
+                        MessageBox.Show("This Customer Id Already Exists,Please Select From List", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        con.Close();
+                        CustomerIdcomboBox.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            con = new SqlConnection(cs.DBConn);
+                            con.Open();
+                            string query1 = "insert into Customer (CustomerName, UserId,DateTime) values (@d1,@d2,@d3)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                            cmd = new SqlCommand(query1, con);
+                            cmd.Parameters.AddWithValue("@d1", inputc);
+                            cmd.Parameters.AddWithValue("@d2", userid);
+                            cmd.Parameters.AddWithValue("@d3", DateTime.UtcNow.ToLocalTime());
+
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                            CustomerIdcomboBox.Items.Clear();
+                            FillCusId();
+                            CustomerIdcomboBox.SelectedText = inputc;
+                            txtQuotation.Focus();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    con = new SqlConnection(cs.DBConn);
+                    con.Open();
+                    cmd = con.CreateCommand();
+                    cmd.CommandText = "SELECT CustomerId from Customer WHERE CustomerName= '" + CustomerIdcomboBox.Text + "'";
+
+                    rdr = cmd.ExecuteReader();
+                    if (rdr.Read())
+                    {
+                        customerid = Convert.ToInt64(rdr["CustomerId"]);
+                    }
+                    if ((rdr != null))
+                    {
+                        rdr.Close();
+                    }
+                    if (con.State == ConnectionState.Open)
+                    {
+                        con.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void CustomerIdcomboBox_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(CustomerIdcomboBox.Text) && !CustomerIdcomboBox.Items.Contains(CustomerIdcomboBox.Text))
+            {
+                MessageBox.Show("Please Select A Valid Customer Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CustomerIdcomboBox.ResetText();
+                this.BeginInvoke(new ChangeFocusDelegate(changeFocus), CustomerIdcomboBox);
+            }
+            if (string.IsNullOrWhiteSpace(CustomerIdcomboBox.Text))
+            {
+                customerid = null;
+            }
         }
     }
 }

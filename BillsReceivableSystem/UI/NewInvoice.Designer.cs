@@ -32,6 +32,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CustomerIdcomboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.WorkOrderRefcomboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpPromisedDate = new System.Windows.Forms.DateTimePicker();
+            this.lblPromisedDate = new System.Windows.Forms.Label();
+            this.txtNetReceivable = new System.Windows.Forms.TextBox();
+            this.lblNetReceivable = new System.Windows.Forms.Label();
+            this.txtGrossReceivable = new System.Windows.Forms.TextBox();
+            this.lblGrossReceivable = new System.Windows.Forms.Label();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDueDate = new System.Windows.Forms.Label();
+            this.dtpInvoiceDate = new System.Windows.Forms.DateTimePicker();
+            this.lblInvoiceDate = new System.Windows.Forms.Label();
             this.txtQuotation = new System.Windows.Forms.TextBox();
             this.txtDeliveryNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,17 +62,8 @@
             this.lblCellPhone = new System.Windows.Forms.Label();
             this.txtRP = new System.Windows.Forms.TextBox();
             this.lblRespondentPerson = new System.Windows.Forms.Label();
-            this.dtpPromisedDate = new System.Windows.Forms.DateTimePicker();
-            this.lblPromisedDate = new System.Windows.Forms.Label();
-            this.txtNetReceivable = new System.Windows.Forms.TextBox();
-            this.lblNetReceivable = new System.Windows.Forms.Label();
-            this.txtGrossReceivable = new System.Windows.Forms.TextBox();
-            this.lblGrossReceivable = new System.Windows.Forms.Label();
-            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
-            this.lblDueDate = new System.Windows.Forms.Label();
-            this.dtpInvoiceDate = new System.Windows.Forms.DateTimePicker();
-            this.lblInvoiceDate = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Addbutton = new System.Windows.Forms.Button();
             this.QtytextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.UnitPricetextBox = new System.Windows.Forms.TextBox();
@@ -67,7 +72,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.DescriptionrichTextBox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Addbutton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -85,7 +89,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label2.Location = new System.Drawing.Point(418, 30);
+            this.label2.Location = new System.Drawing.Point(418, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(275, 31);
             this.label2.TabIndex = 206;
@@ -105,6 +109,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CustomerIdcomboBox);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.WorkOrderRefcomboBox);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.dtpPromisedDate);
             this.groupBox1.Controls.Add(this.lblPromisedDate);
             this.groupBox1.Controls.Add(this.txtNetReceivable);
@@ -131,169 +139,60 @@
             this.groupBox1.Controls.Add(this.lblCellPhone);
             this.groupBox1.Controls.Add(this.txtRP);
             this.groupBox1.Controls.Add(this.lblRespondentPerson);
-            this.groupBox1.Location = new System.Drawing.Point(36, 72);
+            this.groupBox1.Location = new System.Drawing.Point(36, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 542);
+            this.groupBox1.Size = new System.Drawing.Size(489, 602);
             this.groupBox1.TabIndex = 221;
             this.groupBox1.TabStop = false;
             // 
-            // txtQuotation
+            // CustomerIdcomboBox
             // 
-            this.txtQuotation.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuotation.Location = new System.Drawing.Point(202, 13);
-            this.txtQuotation.Name = "txtQuotation";
-            this.txtQuotation.Size = new System.Drawing.Size(267, 29);
-            this.txtQuotation.TabIndex = 204;
+            this.CustomerIdcomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CustomerIdcomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CustomerIdcomboBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerIdcomboBox.FormattingEnabled = true;
+            this.CustomerIdcomboBox.Location = new System.Drawing.Point(202, 20);
+            this.CustomerIdcomboBox.Name = "CustomerIdcomboBox";
+            this.CustomerIdcomboBox.Size = new System.Drawing.Size(267, 29);
+            this.CustomerIdcomboBox.TabIndex = 235;
+            this.CustomerIdcomboBox.SelectedIndexChanged += new System.EventHandler(this.CustomerIdcomboBox_SelectedIndexChanged);
+            this.CustomerIdcomboBox.Leave += new System.EventHandler(this.CustomerIdcomboBox_Leave);
             // 
-            // txtDeliveryNo
+            // label8
             // 
-            this.txtDeliveryNo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeliveryNo.Location = new System.Drawing.Point(202, 83);
-            this.txtDeliveryNo.Name = "txtDeliveryNo";
-            this.txtDeliveryNo.Size = new System.Drawing.Size(267, 29);
-            this.txtDeliveryNo.TabIndex = 206;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(97, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 19);
+            this.label8.TabIndex = 234;
+            this.label8.Text = "Customer Id :";
             // 
-            // label1
+            // WorkOrderRefcomboBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(29, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 19);
-            this.label1.TabIndex = 219;
-            this.label1.Text = "Delivery Order/Chalan :";
+            this.WorkOrderRefcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WorkOrderRefcomboBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkOrderRefcomboBox.FormattingEnabled = true;
+            this.WorkOrderRefcomboBox.Items.AddRange(new object[] {
+            "Verbal",
+            "Email",
+            "Hand Writing"});
+            this.WorkOrderRefcomboBox.Location = new System.Drawing.Point(202, 83);
+            this.WorkOrderRefcomboBox.Name = "WorkOrderRefcomboBox";
+            this.WorkOrderRefcomboBox.Size = new System.Drawing.Size(268, 30);
+            this.WorkOrderRefcomboBox.TabIndex = 232;
             // 
-            // txtWorkOrderNo
+            // label7
             // 
-            this.txtWorkOrderNo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorkOrderNo.Location = new System.Drawing.Point(203, 48);
-            this.txtWorkOrderNo.Name = "txtWorkOrderNo";
-            this.txtWorkOrderNo.Size = new System.Drawing.Size(267, 29);
-            this.txtWorkOrderNo.TabIndex = 205;
-            // 
-            // lblWorkOrderNo
-            // 
-            this.lblWorkOrderNo.AutoSize = true;
-            this.lblWorkOrderNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWorkOrderNo.ForeColor = System.Drawing.Color.Black;
-            this.lblWorkOrderNo.Location = new System.Drawing.Point(44, 51);
-            this.lblWorkOrderNo.Name = "lblWorkOrderNo";
-            this.lblWorkOrderNo.Size = new System.Drawing.Size(157, 19);
-            this.lblWorkOrderNo.TabIndex = 218;
-            this.lblWorkOrderNo.Text = "Work Order Number :";
-            // 
-            // txtLandPhone
-            // 
-            this.txtLandPhone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLandPhone.Location = new System.Drawing.Point(203, 256);
-            this.txtLandPhone.MaxLength = 9;
-            this.txtLandPhone.Name = "txtLandPhone";
-            this.txtLandPhone.Size = new System.Drawing.Size(268, 29);
-            this.txtLandPhone.TabIndex = 209;
-            this.txtLandPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLandPhone_KeyPress_1);
-            // 
-            // lblLandPhone
-            // 
-            this.lblLandPhone.AutoSize = true;
-            this.lblLandPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLandPhone.ForeColor = System.Drawing.Color.Black;
-            this.lblLandPhone.Location = new System.Drawing.Point(101, 268);
-            this.lblLandPhone.Name = "lblLandPhone";
-            this.lblLandPhone.Size = new System.Drawing.Size(97, 19);
-            this.lblLandPhone.TabIndex = 217;
-            this.lblLandPhone.Text = "Land Phone :";
-            // 
-            // txtInvoiceParty
-            // 
-            this.txtInvoiceParty.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoiceParty.Location = new System.Drawing.Point(203, 119);
-            this.txtInvoiceParty.Name = "txtInvoiceParty";
-            this.txtInvoiceParty.Size = new System.Drawing.Size(267, 29);
-            this.txtInvoiceParty.TabIndex = 207;
-            // 
-            // lblInvoiceParty
-            // 
-            this.lblInvoiceParty.AutoSize = true;
-            this.lblInvoiceParty.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoiceParty.ForeColor = System.Drawing.Color.Black;
-            this.lblInvoiceParty.Location = new System.Drawing.Point(8, 122);
-            this.lblInvoiceParty.Name = "lblInvoiceParty";
-            this.lblInvoiceParty.Size = new System.Drawing.Size(189, 19);
-            this.lblInvoiceParty.TabIndex = 216;
-            this.lblInvoiceParty.Text = "Invoice Party/Invoiced To :";
-            // 
-            // txtPayerAddress
-            // 
-            this.txtPayerAddress.BackColor = System.Drawing.Color.White;
-            this.txtPayerAddress.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPayerAddress.Location = new System.Drawing.Point(202, 155);
-            this.txtPayerAddress.Name = "txtPayerAddress";
-            this.txtPayerAddress.Size = new System.Drawing.Size(268, 95);
-            this.txtPayerAddress.TabIndex = 208;
-            this.txtPayerAddress.Text = "";
-            // 
-            // lblPayerAddress
-            // 
-            this.lblPayerAddress.AutoSize = true;
-            this.lblPayerAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayerAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblPayerAddress.Location = new System.Drawing.Point(70, 158);
-            this.lblPayerAddress.Name = "lblPayerAddress";
-            this.lblPayerAddress.Size = new System.Drawing.Size(126, 19);
-            this.lblPayerAddress.TabIndex = 215;
-            this.lblPayerAddress.Text = "Payer\'s Address :";
-            // 
-            // lblQuotation
-            // 
-            this.lblQuotation.AutoSize = true;
-            this.lblQuotation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuotation.ForeColor = System.Drawing.Color.Black;
-            this.lblQuotation.Location = new System.Drawing.Point(7, 15);
-            this.lblQuotation.Name = "lblQuotation";
-            this.lblQuotation.Size = new System.Drawing.Size(189, 19);
-            this.lblQuotation.TabIndex = 214;
-            this.lblQuotation.Text = "Quotation Id/Ref/Number :";
-            // 
-            // txtCellPhone
-            // 
-            this.txtCellPhone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCellPhone.Location = new System.Drawing.Point(206, 327);
-            this.txtCellPhone.MaxLength = 11;
-            this.txtCellPhone.Name = "txtCellPhone";
-            this.txtCellPhone.Size = new System.Drawing.Size(264, 29);
-            this.txtCellPhone.TabIndex = 211;
-            this.txtCellPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCellPhone_KeyPress);
-            // 
-            // lblCellPhone
-            // 
-            this.lblCellPhone.AutoSize = true;
-            this.lblCellPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCellPhone.ForeColor = System.Drawing.Color.Black;
-            this.lblCellPhone.Location = new System.Drawing.Point(107, 329);
-            this.lblCellPhone.Name = "lblCellPhone";
-            this.lblCellPhone.Size = new System.Drawing.Size(90, 19);
-            this.lblCellPhone.TabIndex = 213;
-            this.lblCellPhone.Text = "Cell Phone :";
-            // 
-            // txtRP
-            // 
-            this.txtRP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRP.Location = new System.Drawing.Point(204, 291);
-            this.txtRP.Name = "txtRP";
-            this.txtRP.Size = new System.Drawing.Size(267, 29);
-            this.txtRP.TabIndex = 210;
-            // 
-            // lblRespondentPerson
-            // 
-            this.lblRespondentPerson.AutoSize = true;
-            this.lblRespondentPerson.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRespondentPerson.ForeColor = System.Drawing.Color.Black;
-            this.lblRespondentPerson.Location = new System.Drawing.Point(19, 296);
-            this.lblRespondentPerson.Name = "lblRespondentPerson";
-            this.lblRespondentPerson.Size = new System.Drawing.Size(179, 19);
-            this.lblRespondentPerson.TabIndex = 212;
-            this.lblRespondentPerson.Text = "Respondent Person(RP) :";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(70, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 19);
+            this.label7.TabIndex = 231;
+            this.label7.Text = "Work Order Ref :";
             // 
             // dtpPromisedDate
             // 
@@ -301,7 +200,7 @@
             this.dtpPromisedDate.CustomFormat = "dd/MM/yyyy";
             this.dtpPromisedDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpPromisedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPromisedDate.Location = new System.Drawing.Point(208, 500);
+            this.dtpPromisedDate.Location = new System.Drawing.Point(210, 558);
             this.dtpPromisedDate.Name = "dtpPromisedDate";
             this.dtpPromisedDate.ShowCheckBox = true;
             this.dtpPromisedDate.Size = new System.Drawing.Size(254, 29);
@@ -312,7 +211,7 @@
             this.lblPromisedDate.AutoSize = true;
             this.lblPromisedDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPromisedDate.ForeColor = System.Drawing.Color.Black;
-            this.lblPromisedDate.Location = new System.Drawing.Point(3, 505);
+            this.lblPromisedDate.Location = new System.Drawing.Point(5, 563);
             this.lblPromisedDate.Name = "lblPromisedDate";
             this.lblPromisedDate.Size = new System.Drawing.Size(200, 19);
             this.lblPromisedDate.TabIndex = 230;
@@ -321,7 +220,7 @@
             // txtNetReceivable
             // 
             this.txtNetReceivable.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNetReceivable.Location = new System.Drawing.Point(207, 466);
+            this.txtNetReceivable.Location = new System.Drawing.Point(209, 525);
             this.txtNetReceivable.Name = "txtNetReceivable";
             this.txtNetReceivable.Size = new System.Drawing.Size(255, 29);
             this.txtNetReceivable.TabIndex = 226;
@@ -332,7 +231,7 @@
             this.lblNetReceivable.AutoSize = true;
             this.lblNetReceivable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetReceivable.ForeColor = System.Drawing.Color.Black;
-            this.lblNetReceivable.Location = new System.Drawing.Point(79, 476);
+            this.lblNetReceivable.Location = new System.Drawing.Point(81, 532);
             this.lblNetReceivable.Name = "lblNetReceivable";
             this.lblNetReceivable.Size = new System.Drawing.Size(122, 19);
             this.lblNetReceivable.TabIndex = 229;
@@ -341,7 +240,7 @@
             // txtGrossReceivable
             // 
             this.txtGrossReceivable.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrossReceivable.Location = new System.Drawing.Point(207, 433);
+            this.txtGrossReceivable.Location = new System.Drawing.Point(209, 492);
             this.txtGrossReceivable.Name = "txtGrossReceivable";
             this.txtGrossReceivable.Size = new System.Drawing.Size(255, 29);
             this.txtGrossReceivable.TabIndex = 225;
@@ -352,7 +251,7 @@
             this.lblGrossReceivable.AutoSize = true;
             this.lblGrossReceivable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrossReceivable.ForeColor = System.Drawing.Color.Black;
-            this.lblGrossReceivable.Location = new System.Drawing.Point(64, 438);
+            this.lblGrossReceivable.Location = new System.Drawing.Point(66, 501);
             this.lblGrossReceivable.Name = "lblGrossReceivable";
             this.lblGrossReceivable.Size = new System.Drawing.Size(137, 19);
             this.lblGrossReceivable.TabIndex = 228;
@@ -364,7 +263,7 @@
             this.dtpDueDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDueDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDueDate.Location = new System.Drawing.Point(208, 398);
+            this.dtpDueDate.Location = new System.Drawing.Point(210, 458);
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.ShowCheckBox = true;
             this.dtpDueDate.Size = new System.Drawing.Size(254, 29);
@@ -375,7 +274,7 @@
             this.lblDueDate.AutoSize = true;
             this.lblDueDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDueDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDueDate.Location = new System.Drawing.Point(117, 398);
+            this.lblDueDate.Location = new System.Drawing.Point(119, 464);
             this.lblDueDate.Name = "lblDueDate";
             this.lblDueDate.Size = new System.Drawing.Size(83, 19);
             this.lblDueDate.TabIndex = 224;
@@ -387,7 +286,7 @@
             this.dtpInvoiceDate.CustomFormat = "dd/MM/yyyy";
             this.dtpInvoiceDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpInvoiceDate.Location = new System.Drawing.Point(208, 364);
+            this.dtpInvoiceDate.Location = new System.Drawing.Point(210, 424);
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
             this.dtpInvoiceDate.ShowCheckBox = true;
             this.dtpInvoiceDate.Size = new System.Drawing.Size(254, 29);
@@ -398,11 +297,169 @@
             this.lblInvoiceDate.AutoSize = true;
             this.lblInvoiceDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvoiceDate.ForeColor = System.Drawing.Color.Black;
-            this.lblInvoiceDate.Location = new System.Drawing.Point(97, 364);
+            this.lblInvoiceDate.Location = new System.Drawing.Point(99, 430);
             this.lblInvoiceDate.Name = "lblInvoiceDate";
             this.lblInvoiceDate.Size = new System.Drawing.Size(104, 19);
             this.lblInvoiceDate.TabIndex = 223;
             this.lblInvoiceDate.Text = "Invoice Date :";
+            // 
+            // txtQuotation
+            // 
+            this.txtQuotation.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuotation.Location = new System.Drawing.Point(202, 51);
+            this.txtQuotation.Name = "txtQuotation";
+            this.txtQuotation.Size = new System.Drawing.Size(267, 29);
+            this.txtQuotation.TabIndex = 204;
+            // 
+            // txtDeliveryNo
+            // 
+            this.txtDeliveryNo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeliveryNo.Location = new System.Drawing.Point(202, 150);
+            this.txtDeliveryNo.Name = "txtDeliveryNo";
+            this.txtDeliveryNo.Size = new System.Drawing.Size(267, 29);
+            this.txtDeliveryNo.TabIndex = 206;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(29, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 19);
+            this.label1.TabIndex = 219;
+            this.label1.Text = "Delivery Order/Chalan :";
+            // 
+            // txtWorkOrderNo
+            // 
+            this.txtWorkOrderNo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkOrderNo.Location = new System.Drawing.Point(203, 116);
+            this.txtWorkOrderNo.Name = "txtWorkOrderNo";
+            this.txtWorkOrderNo.Size = new System.Drawing.Size(267, 29);
+            this.txtWorkOrderNo.TabIndex = 205;
+            // 
+            // lblWorkOrderNo
+            // 
+            this.lblWorkOrderNo.AutoSize = true;
+            this.lblWorkOrderNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkOrderNo.ForeColor = System.Drawing.Color.Black;
+            this.lblWorkOrderNo.Location = new System.Drawing.Point(44, 119);
+            this.lblWorkOrderNo.Name = "lblWorkOrderNo";
+            this.lblWorkOrderNo.Size = new System.Drawing.Size(157, 19);
+            this.lblWorkOrderNo.TabIndex = 218;
+            this.lblWorkOrderNo.Text = "Work Order Number :";
+            // 
+            // txtLandPhone
+            // 
+            this.txtLandPhone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLandPhone.Location = new System.Drawing.Point(205, 321);
+            this.txtLandPhone.MaxLength = 9;
+            this.txtLandPhone.Name = "txtLandPhone";
+            this.txtLandPhone.Size = new System.Drawing.Size(268, 29);
+            this.txtLandPhone.TabIndex = 209;
+            this.txtLandPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLandPhone_KeyPress_1);
+            // 
+            // lblLandPhone
+            // 
+            this.lblLandPhone.AutoSize = true;
+            this.lblLandPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLandPhone.ForeColor = System.Drawing.Color.Black;
+            this.lblLandPhone.Location = new System.Drawing.Point(103, 328);
+            this.lblLandPhone.Name = "lblLandPhone";
+            this.lblLandPhone.Size = new System.Drawing.Size(97, 19);
+            this.lblLandPhone.TabIndex = 217;
+            this.lblLandPhone.Text = "Land Phone :";
+            // 
+            // txtInvoiceParty
+            // 
+            this.txtInvoiceParty.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceParty.Location = new System.Drawing.Point(203, 184);
+            this.txtInvoiceParty.Name = "txtInvoiceParty";
+            this.txtInvoiceParty.Size = new System.Drawing.Size(267, 29);
+            this.txtInvoiceParty.TabIndex = 207;
+            // 
+            // lblInvoiceParty
+            // 
+            this.lblInvoiceParty.AutoSize = true;
+            this.lblInvoiceParty.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoiceParty.ForeColor = System.Drawing.Color.Black;
+            this.lblInvoiceParty.Location = new System.Drawing.Point(8, 188);
+            this.lblInvoiceParty.Name = "lblInvoiceParty";
+            this.lblInvoiceParty.Size = new System.Drawing.Size(189, 19);
+            this.lblInvoiceParty.TabIndex = 216;
+            this.lblInvoiceParty.Text = "Invoice Party/Invoiced To :";
+            // 
+            // txtPayerAddress
+            // 
+            this.txtPayerAddress.BackColor = System.Drawing.Color.White;
+            this.txtPayerAddress.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPayerAddress.Location = new System.Drawing.Point(202, 218);
+            this.txtPayerAddress.Name = "txtPayerAddress";
+            this.txtPayerAddress.Size = new System.Drawing.Size(268, 95);
+            this.txtPayerAddress.TabIndex = 208;
+            this.txtPayerAddress.Text = "";
+            // 
+            // lblPayerAddress
+            // 
+            this.lblPayerAddress.AutoSize = true;
+            this.lblPayerAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayerAddress.ForeColor = System.Drawing.Color.Black;
+            this.lblPayerAddress.Location = new System.Drawing.Point(70, 223);
+            this.lblPayerAddress.Name = "lblPayerAddress";
+            this.lblPayerAddress.Size = new System.Drawing.Size(126, 19);
+            this.lblPayerAddress.TabIndex = 215;
+            this.lblPayerAddress.Text = "Payer\'s Address :";
+            // 
+            // lblQuotation
+            // 
+            this.lblQuotation.AutoSize = true;
+            this.lblQuotation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuotation.ForeColor = System.Drawing.Color.Black;
+            this.lblQuotation.Location = new System.Drawing.Point(7, 55);
+            this.lblQuotation.Name = "lblQuotation";
+            this.lblQuotation.Size = new System.Drawing.Size(189, 19);
+            this.lblQuotation.TabIndex = 214;
+            this.lblQuotation.Text = "Quotation Id/Ref/Number :";
+            // 
+            // txtCellPhone
+            // 
+            this.txtCellPhone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCellPhone.Location = new System.Drawing.Point(208, 389);
+            this.txtCellPhone.MaxLength = 11;
+            this.txtCellPhone.Name = "txtCellPhone";
+            this.txtCellPhone.Size = new System.Drawing.Size(264, 29);
+            this.txtCellPhone.TabIndex = 211;
+            this.txtCellPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCellPhone_KeyPress);
+            // 
+            // lblCellPhone
+            // 
+            this.lblCellPhone.AutoSize = true;
+            this.lblCellPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCellPhone.ForeColor = System.Drawing.Color.Black;
+            this.lblCellPhone.Location = new System.Drawing.Point(109, 396);
+            this.lblCellPhone.Name = "lblCellPhone";
+            this.lblCellPhone.Size = new System.Drawing.Size(90, 19);
+            this.lblCellPhone.TabIndex = 213;
+            this.lblCellPhone.Text = "Cell Phone :";
+            // 
+            // txtRP
+            // 
+            this.txtRP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRP.Location = new System.Drawing.Point(206, 355);
+            this.txtRP.Name = "txtRP";
+            this.txtRP.Size = new System.Drawing.Size(267, 29);
+            this.txtRP.TabIndex = 210;
+            // 
+            // lblRespondentPerson
+            // 
+            this.lblRespondentPerson.AutoSize = true;
+            this.lblRespondentPerson.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRespondentPerson.ForeColor = System.Drawing.Color.Black;
+            this.lblRespondentPerson.Location = new System.Drawing.Point(21, 360);
+            this.lblRespondentPerson.Name = "lblRespondentPerson";
+            this.lblRespondentPerson.Size = new System.Drawing.Size(179, 19);
+            this.lblRespondentPerson.TabIndex = 212;
+            this.lblRespondentPerson.Text = "Respondent Person(RP) :";
             // 
             // groupBox2
             // 
@@ -415,11 +472,23 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.DescriptionrichTextBox);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(541, 81);
+            this.groupBox2.Location = new System.Drawing.Point(541, 51);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(425, 233);
             this.groupBox2.TabIndex = 222;
             this.groupBox2.TabStop = false;
+            // 
+            // Addbutton
+            // 
+            this.Addbutton.BackColor = System.Drawing.Color.Coral;
+            this.Addbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbutton.Location = new System.Drawing.Point(320, 160);
+            this.Addbutton.Name = "Addbutton";
+            this.Addbutton.Size = new System.Drawing.Size(95, 58);
+            this.Addbutton.TabIndex = 223;
+            this.Addbutton.Text = "Add";
+            this.Addbutton.UseVisualStyleBackColor = false;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
             // QtytextBox
             // 
@@ -505,24 +574,12 @@
             this.label3.TabIndex = 216;
             this.label3.Text = "Product Description :";
             // 
-            // Addbutton
-            // 
-            this.Addbutton.BackColor = System.Drawing.Color.Coral;
-            this.Addbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addbutton.Location = new System.Drawing.Point(320, 160);
-            this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(95, 58);
-            this.Addbutton.TabIndex = 223;
-            this.Addbutton.Text = "Add";
-            this.Addbutton.UseVisualStyleBackColor = false;
-            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Location = new System.Drawing.Point(541, 328);
+            this.groupBox3.Location = new System.Drawing.Point(541, 308);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(480, 298);
+            this.groupBox3.Size = new System.Drawing.Size(480, 346);
             this.groupBox3.TabIndex = 223;
             this.groupBox3.TabStop = false;
             // 
@@ -539,7 +596,7 @@
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(3, 16);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(474, 279);
+            this.listView1.Size = new System.Drawing.Size(474, 327);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -573,7 +630,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1135, 638);
+            this.ClientSize = new System.Drawing.Size(1135, 666);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -642,5 +699,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ComboBox WorkOrderRefcomboBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox CustomerIdcomboBox;
     }
 }
