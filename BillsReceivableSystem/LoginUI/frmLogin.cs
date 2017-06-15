@@ -183,7 +183,7 @@ namespace BillsReceivableSystem.LoginUI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button1_Click(this, new EventArgs());
+                button1_Click_1(this, new EventArgs());
 
             }
         }

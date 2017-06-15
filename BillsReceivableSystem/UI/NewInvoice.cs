@@ -618,5 +618,187 @@ namespace BillsReceivableSystem.UI
                 customerid = null;
             }
         }
+
+        private void CustomerIdcomboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtQuotation.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtQuotation_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                WorkOrderRefcomboBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void WorkOrderRefcomboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtWorkOrderNo.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtWorkOrderNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtDeliveryNo.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtDeliveryNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtInvoiceParty.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtInvoiceParty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPayerAddress.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtPayerAddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtLandPhone.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtLandPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRP.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtRP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtCellPhone.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtCellPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dtpInvoiceDate.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void dtpInvoiceDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dtpDueDate.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void dtpDueDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtGrossReceivable.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtGrossReceivable_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNetReceivable.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtNetReceivable_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dtpPromisedDate.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void dtpPromisedDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DescriptionrichTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void DescriptionrichTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                UnitcomboBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void UnitcomboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                UnitPricetextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void UnitPricetextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                QtytextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void QtytextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Addbutton_Click(this, new EventArgs());
+                e.Handled = true;
+            }
+        }
+
+
+
+
+
+
+
     }
 }
+
+
+
+//

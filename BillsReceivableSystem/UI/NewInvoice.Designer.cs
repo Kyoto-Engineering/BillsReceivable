@@ -154,8 +154,9 @@
             this.CustomerIdcomboBox.Location = new System.Drawing.Point(202, 20);
             this.CustomerIdcomboBox.Name = "CustomerIdcomboBox";
             this.CustomerIdcomboBox.Size = new System.Drawing.Size(267, 29);
-            this.CustomerIdcomboBox.TabIndex = 235;
+            this.CustomerIdcomboBox.TabIndex = 0;
             this.CustomerIdcomboBox.SelectedIndexChanged += new System.EventHandler(this.CustomerIdcomboBox_SelectedIndexChanged);
+            this.CustomerIdcomboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CustomerIdcomboBox_KeyDown);
             this.CustomerIdcomboBox.Leave += new System.EventHandler(this.CustomerIdcomboBox_Leave);
             // 
             // label8
@@ -181,7 +182,8 @@
             this.WorkOrderRefcomboBox.Location = new System.Drawing.Point(202, 83);
             this.WorkOrderRefcomboBox.Name = "WorkOrderRefcomboBox";
             this.WorkOrderRefcomboBox.Size = new System.Drawing.Size(268, 30);
-            this.WorkOrderRefcomboBox.TabIndex = 232;
+            this.WorkOrderRefcomboBox.TabIndex = 2;
+            this.WorkOrderRefcomboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.WorkOrderRefcomboBox_KeyDown);
             // 
             // label7
             // 
@@ -204,7 +206,8 @@
             this.dtpPromisedDate.Name = "dtpPromisedDate";
             this.dtpPromisedDate.ShowCheckBox = true;
             this.dtpPromisedDate.Size = new System.Drawing.Size(254, 29);
-            this.dtpPromisedDate.TabIndex = 227;
+            this.dtpPromisedDate.TabIndex = 14;
+            this.dtpPromisedDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpPromisedDate_KeyDown);
             // 
             // lblPromisedDate
             // 
@@ -223,7 +226,8 @@
             this.txtNetReceivable.Location = new System.Drawing.Point(209, 525);
             this.txtNetReceivable.Name = "txtNetReceivable";
             this.txtNetReceivable.Size = new System.Drawing.Size(255, 29);
-            this.txtNetReceivable.TabIndex = 226;
+            this.txtNetReceivable.TabIndex = 13;
+            this.txtNetReceivable.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNetReceivable_KeyDown);
             this.txtNetReceivable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNetReceivable_KeyPress);
             // 
             // lblNetReceivable
@@ -243,7 +247,8 @@
             this.txtGrossReceivable.Location = new System.Drawing.Point(209, 492);
             this.txtGrossReceivable.Name = "txtGrossReceivable";
             this.txtGrossReceivable.Size = new System.Drawing.Size(255, 29);
-            this.txtGrossReceivable.TabIndex = 225;
+            this.txtGrossReceivable.TabIndex = 12;
+            this.txtGrossReceivable.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGrossReceivable_KeyDown);
             this.txtGrossReceivable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGrossReceivable_KeyPress_1);
             // 
             // lblGrossReceivable
@@ -267,7 +272,8 @@
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.ShowCheckBox = true;
             this.dtpDueDate.Size = new System.Drawing.Size(254, 29);
-            this.dtpDueDate.TabIndex = 222;
+            this.dtpDueDate.TabIndex = 11;
+            this.dtpDueDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpDueDate_KeyDown);
             // 
             // lblDueDate
             // 
@@ -290,7 +296,8 @@
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
             this.dtpInvoiceDate.ShowCheckBox = true;
             this.dtpInvoiceDate.Size = new System.Drawing.Size(254, 29);
-            this.dtpInvoiceDate.TabIndex = 221;
+            this.dtpInvoiceDate.TabIndex = 10;
+            this.dtpInvoiceDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpInvoiceDate_KeyDown);
             // 
             // lblInvoiceDate
             // 
@@ -309,7 +316,8 @@
             this.txtQuotation.Location = new System.Drawing.Point(202, 51);
             this.txtQuotation.Name = "txtQuotation";
             this.txtQuotation.Size = new System.Drawing.Size(267, 29);
-            this.txtQuotation.TabIndex = 204;
+            this.txtQuotation.TabIndex = 1;
+            this.txtQuotation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuotation_KeyDown);
             // 
             // txtDeliveryNo
             // 
@@ -317,7 +325,8 @@
             this.txtDeliveryNo.Location = new System.Drawing.Point(202, 150);
             this.txtDeliveryNo.Name = "txtDeliveryNo";
             this.txtDeliveryNo.Size = new System.Drawing.Size(267, 29);
-            this.txtDeliveryNo.TabIndex = 206;
+            this.txtDeliveryNo.TabIndex = 4;
+            this.txtDeliveryNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDeliveryNo_KeyDown);
             // 
             // label1
             // 
@@ -336,7 +345,8 @@
             this.txtWorkOrderNo.Location = new System.Drawing.Point(203, 116);
             this.txtWorkOrderNo.Name = "txtWorkOrderNo";
             this.txtWorkOrderNo.Size = new System.Drawing.Size(267, 29);
-            this.txtWorkOrderNo.TabIndex = 205;
+            this.txtWorkOrderNo.TabIndex = 3;
+            this.txtWorkOrderNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtWorkOrderNo_KeyDown);
             // 
             // lblWorkOrderNo
             // 
@@ -356,7 +366,8 @@
             this.txtLandPhone.MaxLength = 9;
             this.txtLandPhone.Name = "txtLandPhone";
             this.txtLandPhone.Size = new System.Drawing.Size(268, 29);
-            this.txtLandPhone.TabIndex = 209;
+            this.txtLandPhone.TabIndex = 7;
+            this.txtLandPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLandPhone_KeyDown);
             this.txtLandPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLandPhone_KeyPress_1);
             // 
             // lblLandPhone
@@ -376,7 +387,8 @@
             this.txtInvoiceParty.Location = new System.Drawing.Point(203, 184);
             this.txtInvoiceParty.Name = "txtInvoiceParty";
             this.txtInvoiceParty.Size = new System.Drawing.Size(267, 29);
-            this.txtInvoiceParty.TabIndex = 207;
+            this.txtInvoiceParty.TabIndex = 5;
+            this.txtInvoiceParty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInvoiceParty_KeyDown);
             // 
             // lblInvoiceParty
             // 
@@ -396,8 +408,9 @@
             this.txtPayerAddress.Location = new System.Drawing.Point(202, 218);
             this.txtPayerAddress.Name = "txtPayerAddress";
             this.txtPayerAddress.Size = new System.Drawing.Size(268, 95);
-            this.txtPayerAddress.TabIndex = 208;
+            this.txtPayerAddress.TabIndex = 6;
             this.txtPayerAddress.Text = "";
+            this.txtPayerAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPayerAddress_KeyDown);
             // 
             // lblPayerAddress
             // 
@@ -428,7 +441,8 @@
             this.txtCellPhone.MaxLength = 11;
             this.txtCellPhone.Name = "txtCellPhone";
             this.txtCellPhone.Size = new System.Drawing.Size(264, 29);
-            this.txtCellPhone.TabIndex = 211;
+            this.txtCellPhone.TabIndex = 9;
+            this.txtCellPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCellPhone_KeyDown);
             this.txtCellPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCellPhone_KeyPress);
             // 
             // lblCellPhone
@@ -448,7 +462,8 @@
             this.txtRP.Location = new System.Drawing.Point(206, 355);
             this.txtRP.Name = "txtRP";
             this.txtRP.Size = new System.Drawing.Size(267, 29);
-            this.txtRP.TabIndex = 210;
+            this.txtRP.TabIndex = 8;
+            this.txtRP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRP_KeyDown);
             // 
             // lblRespondentPerson
             // 
@@ -485,7 +500,7 @@
             this.Addbutton.Location = new System.Drawing.Point(320, 160);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(95, 58);
-            this.Addbutton.TabIndex = 223;
+            this.Addbutton.TabIndex = 4;
             this.Addbutton.Text = "Add";
             this.Addbutton.UseVisualStyleBackColor = false;
             this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
@@ -496,7 +511,8 @@
             this.QtytextBox.Location = new System.Drawing.Point(157, 189);
             this.QtytextBox.Name = "QtytextBox";
             this.QtytextBox.Size = new System.Drawing.Size(156, 29);
-            this.QtytextBox.TabIndex = 220;
+            this.QtytextBox.TabIndex = 3;
+            this.QtytextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QtytextBox_KeyDown);
             this.QtytextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QtytextBox_KeyPress);
             // 
             // label4
@@ -516,7 +532,8 @@
             this.UnitPricetextBox.Location = new System.Drawing.Point(158, 154);
             this.UnitPricetextBox.Name = "UnitPricetextBox";
             this.UnitPricetextBox.Size = new System.Drawing.Size(156, 29);
-            this.UnitPricetextBox.TabIndex = 219;
+            this.UnitPricetextBox.TabIndex = 2;
+            this.UnitPricetextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnitPricetextBox_KeyDown);
             this.UnitPricetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitPricetextBox_KeyPress);
             // 
             // label6
@@ -539,8 +556,9 @@
             this.UnitcomboBox.Location = new System.Drawing.Point(157, 116);
             this.UnitcomboBox.Name = "UnitcomboBox";
             this.UnitcomboBox.Size = new System.Drawing.Size(157, 32);
-            this.UnitcomboBox.TabIndex = 217;
+            this.UnitcomboBox.TabIndex = 1;
             this.UnitcomboBox.SelectedIndexChanged += new System.EventHandler(this.UnitcomboBox_SelectedIndexChanged_1);
+            this.UnitcomboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnitcomboBox_KeyDown);
             // 
             // label5
             // 
@@ -560,8 +578,9 @@
             this.DescriptionrichTextBox.Location = new System.Drawing.Point(156, 15);
             this.DescriptionrichTextBox.Name = "DescriptionrichTextBox";
             this.DescriptionrichTextBox.Size = new System.Drawing.Size(255, 95);
-            this.DescriptionrichTextBox.TabIndex = 215;
+            this.DescriptionrichTextBox.TabIndex = 0;
             this.DescriptionrichTextBox.Text = "";
+            this.DescriptionrichTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DescriptionrichTextBox_KeyDown);
             // 
             // label3
             // 

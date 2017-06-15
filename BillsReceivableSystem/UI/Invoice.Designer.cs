@@ -62,7 +62,7 @@
             this.txtCellPhone.Name = "txtCellPhone";
             this.txtCellPhone.ReadOnly = true;
             this.txtCellPhone.Size = new System.Drawing.Size(264, 29);
-            this.txtCellPhone.TabIndex = 104;
+            this.txtCellPhone.TabIndex = 5;
             // 
             // lblCellPhone
             // 
@@ -82,7 +82,7 @@
             this.txtRP.Name = "txtRP";
             this.txtRP.ReadOnly = true;
             this.txtRP.Size = new System.Drawing.Size(267, 29);
-            this.txtRP.TabIndex = 100;
+            this.txtRP.TabIndex = 4;
             // 
             // lblRespondentPerson
             // 
@@ -127,7 +127,7 @@
             this.btnSave.Location = new System.Drawing.Point(935, 392);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 63);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Generate Invoice";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -140,7 +140,7 @@
             this.txtPayerAddress.Name = "txtPayerAddress";
             this.txtPayerAddress.ReadOnly = true;
             this.txtPayerAddress.Size = new System.Drawing.Size(267, 118);
-            this.txtPayerAddress.TabIndex = 122;
+            this.txtPayerAddress.TabIndex = 2;
             this.txtPayerAddress.Text = "";
             // 
             // lblPayerAddress
@@ -162,7 +162,7 @@
             this.dtpInvoiceDate.Location = new System.Drawing.Point(779, 89);
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
             this.dtpInvoiceDate.Size = new System.Drawing.Size(252, 29);
-            this.dtpInvoiceDate.TabIndex = 1;
+            this.dtpInvoiceDate.TabIndex = 6;
             this.dtpInvoiceDate.ValueChanged += new System.EventHandler(this.dtpInvoiceDate_ValueChanged);
             // 
             // lblInvoiceDate
@@ -182,7 +182,7 @@
             this.txtGrossReceivable.Location = new System.Drawing.Point(778, 185);
             this.txtGrossReceivable.Name = "txtGrossReceivable";
             this.txtGrossReceivable.Size = new System.Drawing.Size(253, 29);
-            this.txtGrossReceivable.TabIndex = 3;
+            this.txtGrossReceivable.TabIndex = 8;
             this.txtGrossReceivable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGrossReceivable_KeyPress);
             // 
             // lblGrossReceivable
@@ -204,7 +204,7 @@
             this.dtpDueDate.Location = new System.Drawing.Point(779, 137);
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.Size = new System.Drawing.Size(252, 29);
-            this.dtpDueDate.TabIndex = 2;
+            this.dtpDueDate.TabIndex = 7;
             this.dtpDueDate.ValueChanged += new System.EventHandler(this.dtpDueDate_ValueChanged);
             // 
             // lblDueDate
@@ -225,7 +225,7 @@
             this.txtInvoiceParty.Name = "txtInvoiceParty";
             this.txtInvoiceParty.ReadOnly = true;
             this.txtInvoiceParty.Size = new System.Drawing.Size(267, 29);
-            this.txtInvoiceParty.TabIndex = 141;
+            this.txtInvoiceParty.TabIndex = 1;
             // 
             // lblInvoiceParty
             // 
@@ -244,7 +244,7 @@
             this.txtNetReceivable.Location = new System.Drawing.Point(778, 233);
             this.txtNetReceivable.Name = "txtNetReceivable";
             this.txtNetReceivable.Size = new System.Drawing.Size(253, 29);
-            this.txtNetReceivable.TabIndex = 4;
+            this.txtNetReceivable.TabIndex = 9;
             this.txtNetReceivable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNetReceivable_KeyPress);
             // 
             // lblNetReceivable
@@ -266,7 +266,7 @@
             this.dtpPromisedDate.Location = new System.Drawing.Point(779, 281);
             this.dtpPromisedDate.Name = "dtpPromisedDate";
             this.dtpPromisedDate.Size = new System.Drawing.Size(252, 29);
-            this.dtpPromisedDate.TabIndex = 5;
+            this.dtpPromisedDate.TabIndex = 10;
             this.dtpPromisedDate.ValueChanged += new System.EventHandler(this.dtpPromisedDate_ValueChanged);
             // 
             // lblPromisedDate
@@ -287,7 +287,7 @@
             this.txtLandPhone.Name = "txtLandPhone";
             this.txtLandPhone.ReadOnly = true;
             this.txtLandPhone.Size = new System.Drawing.Size(267, 29);
-            this.txtLandPhone.TabIndex = 147;
+            this.txtLandPhone.TabIndex = 3;
             // 
             // lblLandPhone
             // 

@@ -78,7 +78,7 @@
             this.BtnSave.Location = new System.Drawing.Point(638, 500);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(112, 60);
-            this.BtnSave.TabIndex = 14;
+            this.BtnSave.TabIndex = 16;
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
@@ -88,7 +88,7 @@
             this.txtBillNarrative.Location = new System.Drawing.Point(813, 298);
             this.txtBillNarrative.Name = "txtBillNarrative";
             this.txtBillNarrative.Size = new System.Drawing.Size(363, 112);
-            this.txtBillNarrative.TabIndex = 12;
+            this.txtBillNarrative.TabIndex = 14;
             this.txtBillNarrative.Text = "";
             // 
             // lblDescription
@@ -131,7 +131,7 @@
             this.txtNote.Location = new System.Drawing.Point(813, 416);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(363, 63);
-            this.txtNote.TabIndex = 13;
+            this.txtNote.TabIndex = 15;
             this.txtNote.Text = "";
             // 
             // lblBillType
@@ -422,7 +422,7 @@
             this.ContactPersontextBox.Location = new System.Drawing.Point(272, 428);
             this.ContactPersontextBox.Name = "ContactPersontextBox";
             this.ContactPersontextBox.Size = new System.Drawing.Size(267, 29);
-            this.ContactPersontextBox.TabIndex = 50;
+            this.ContactPersontextBox.TabIndex = 11;
             // 
             // label2
             // 
@@ -441,7 +441,7 @@
             this.DesignationtextBox.Location = new System.Drawing.Point(272, 461);
             this.DesignationtextBox.Name = "DesignationtextBox";
             this.DesignationtextBox.Size = new System.Drawing.Size(267, 29);
-            this.DesignationtextBox.TabIndex = 52;
+            this.DesignationtextBox.TabIndex = 12;
             // 
             // label3
             // 
@@ -460,7 +460,7 @@
             this.PhonetextBox.Location = new System.Drawing.Point(272, 496);
             this.PhonetextBox.Name = "PhonetextBox";
             this.PhonetextBox.Size = new System.Drawing.Size(267, 29);
-            this.PhonetextBox.TabIndex = 56;
+            this.PhonetextBox.TabIndex = 13;
             // 
             // label4
             // 

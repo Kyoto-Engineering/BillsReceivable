@@ -60,7 +60,7 @@
             this.dtpInvoiceDate.Location = new System.Drawing.Point(347, 208);
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
             this.dtpInvoiceDate.Size = new System.Drawing.Size(144, 29);
-            this.dtpInvoiceDate.TabIndex = 112;
+            this.dtpInvoiceDate.TabIndex = 2;
             // 
             // lblInvoiceDate
             // 
@@ -79,7 +79,7 @@
             this.txtInvoiceAmount.Location = new System.Drawing.Point(346, 288);
             this.txtInvoiceAmount.Name = "txtInvoiceAmount";
             this.txtInvoiceAmount.Size = new System.Drawing.Size(267, 29);
-            this.txtInvoiceAmount.TabIndex = 110;
+            this.txtInvoiceAmount.TabIndex = 4;
             this.txtInvoiceAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInvoiceAmount_KeyPress_1);
             // 
             // lblInvoiceAmount
@@ -100,7 +100,7 @@
             this.txtPayerAddress.Location = new System.Drawing.Point(347, 117);
             this.txtPayerAddress.Name = "txtPayerAddress";
             this.txtPayerAddress.Size = new System.Drawing.Size(360, 85);
-            this.txtPayerAddress.TabIndex = 108;
+            this.txtPayerAddress.TabIndex = 1;
             this.txtPayerAddress.Text = "";
             // 
             // lblPayerAddress
@@ -120,7 +120,7 @@
             this.txtInvoiceNo.Location = new System.Drawing.Point(347, 247);
             this.txtInvoiceNo.Name = "txtInvoiceNo";
             this.txtInvoiceNo.Size = new System.Drawing.Size(267, 29);
-            this.txtInvoiceNo.TabIndex = 104;
+            this.txtInvoiceNo.TabIndex = 3;
             // 
             // lblInvoiceNo
             // 
@@ -145,7 +145,7 @@
             this.cmbBillPayable.Location = new System.Drawing.Point(348, 78);
             this.cmbBillPayable.Name = "cmbBillPayable";
             this.cmbBillPayable.Size = new System.Drawing.Size(267, 30);
-            this.cmbBillPayable.TabIndex = 105;
+            this.cmbBillPayable.TabIndex = 0;
             this.cmbBillPayable.SelectedIndexChanged += new System.EventHandler(this.cmbBillPayable_SelectedIndexChanged_1);
             // 
             // lblBillPayable
@@ -189,7 +189,7 @@
             this.BtnSave.Location = new System.Drawing.Point(586, 554);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(121, 60);
-            this.BtnSave.TabIndex = 116;
+            this.BtnSave.TabIndex = 6;
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
@@ -201,7 +201,7 @@
             this.browseButton.Location = new System.Drawing.Point(346, 523);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(144, 33);
-            this.browseButton.TabIndex = 117;
+            this.browseButton.TabIndex = 5;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = false;
             this.browseButton.Click += new System.EventHandler(this.browseButton_Click_1);
