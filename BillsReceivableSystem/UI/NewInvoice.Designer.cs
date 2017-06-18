@@ -144,6 +144,7 @@
             this.groupBox1.Size = new System.Drawing.Size(489, 602);
             this.groupBox1.TabIndex = 221;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // CustomerIdcomboBox
             // 
@@ -492,6 +493,7 @@
             this.groupBox2.Size = new System.Drawing.Size(425, 233);
             this.groupBox2.TabIndex = 222;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // Addbutton
             // 
@@ -533,6 +535,7 @@
             this.UnitPricetextBox.Name = "UnitPricetextBox";
             this.UnitPricetextBox.Size = new System.Drawing.Size(156, 29);
             this.UnitPricetextBox.TabIndex = 2;
+            this.UnitPricetextBox.TextChanged += new System.EventHandler(this.UnitPricetextBox_TextChanged);
             this.UnitPricetextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnitPricetextBox_KeyDown);
             this.UnitPricetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitPricetextBox_KeyPress);
             // 
@@ -580,6 +583,7 @@
             this.DescriptionrichTextBox.Size = new System.Drawing.Size(255, 95);
             this.DescriptionrichTextBox.TabIndex = 0;
             this.DescriptionrichTextBox.Text = "";
+            this.DescriptionrichTextBox.TextChanged += new System.EventHandler(this.DescriptionrichTextBox_TextChanged);
             this.DescriptionrichTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DescriptionrichTextBox_KeyDown);
             // 
             // label3
@@ -619,6 +623,7 @@
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

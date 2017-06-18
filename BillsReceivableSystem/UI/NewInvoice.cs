@@ -393,6 +393,8 @@ namespace BillsReceivableSystem.UI
                     UnitcomboBox.SelectedIndex = -1;
                     UnitPricetextBox.Clear();
                     QtytextBox.Clear();
+
+                    DescriptionrichTextBox.Focus();             // ridoy
                     return;
                 }
 
@@ -410,10 +412,12 @@ namespace BillsReceivableSystem.UI
                     UnitcomboBox.SelectedIndex = -1;
                     UnitPricetextBox.Clear();
                     QtytextBox.Clear();
+
+                    DescriptionrichTextBox.Focus();             // ridoy
                     return;
                 }
             }
-
+            
         }
 
         private void UnitcomboBox_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -788,6 +792,31 @@ namespace BillsReceivableSystem.UI
                 Addbutton_Click(this, new EventArgs());
                 e.Handled = true;
             }
+        }
+
+        private void UnitPricetextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DescriptionrichTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
 
