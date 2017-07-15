@@ -59,6 +59,7 @@
             // 
             this.txtCellPhone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCellPhone.Location = new System.Drawing.Point(251, 426);
+            this.txtCellPhone.MaxLength = 11;
             this.txtCellPhone.Name = "txtCellPhone";
             this.txtCellPhone.ReadOnly = true;
             this.txtCellPhone.Size = new System.Drawing.Size(264, 29);
@@ -79,6 +80,7 @@
             // 
             this.txtRP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRP.Location = new System.Drawing.Point(249, 377);
+            this.txtRP.MaxLength = 90;
             this.txtRP.Name = "txtRP";
             this.txtRP.ReadOnly = true;
             this.txtRP.Size = new System.Drawing.Size(267, 29);
@@ -137,6 +139,7 @@
             this.txtPayerAddress.BackColor = System.Drawing.Color.White;
             this.txtPayerAddress.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPayerAddress.Location = new System.Drawing.Point(248, 190);
+            this.txtPayerAddress.MaxLength = 250;
             this.txtPayerAddress.Name = "txtPayerAddress";
             this.txtPayerAddress.ReadOnly = true;
             this.txtPayerAddress.Size = new System.Drawing.Size(267, 118);
@@ -222,6 +225,7 @@
             // 
             this.txtInvoiceParty.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoiceParty.Location = new System.Drawing.Point(249, 141);
+            this.txtInvoiceParty.MaxLength = 90;
             this.txtInvoiceParty.Name = "txtInvoiceParty";
             this.txtInvoiceParty.ReadOnly = true;
             this.txtInvoiceParty.Size = new System.Drawing.Size(267, 29);
@@ -284,6 +288,7 @@
             // 
             this.txtLandPhone.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLandPhone.Location = new System.Drawing.Point(248, 328);
+            this.txtLandPhone.MaxLength = 11;
             this.txtLandPhone.Name = "txtLandPhone";
             this.txtLandPhone.ReadOnly = true;
             this.txtLandPhone.Size = new System.Drawing.Size(267, 29);

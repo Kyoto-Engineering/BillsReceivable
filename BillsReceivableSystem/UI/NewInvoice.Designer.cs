@@ -315,6 +315,7 @@
             // 
             this.txtQuotation.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuotation.Location = new System.Drawing.Point(202, 51);
+            this.txtQuotation.MaxLength = 200;
             this.txtQuotation.Name = "txtQuotation";
             this.txtQuotation.Size = new System.Drawing.Size(267, 29);
             this.txtQuotation.TabIndex = 1;
@@ -324,6 +325,7 @@
             // 
             this.txtDeliveryNo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeliveryNo.Location = new System.Drawing.Point(202, 150);
+            this.txtDeliveryNo.MaxLength = 200;
             this.txtDeliveryNo.Name = "txtDeliveryNo";
             this.txtDeliveryNo.Size = new System.Drawing.Size(267, 29);
             this.txtDeliveryNo.TabIndex = 4;
@@ -344,6 +346,7 @@
             // 
             this.txtWorkOrderNo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWorkOrderNo.Location = new System.Drawing.Point(203, 116);
+            this.txtWorkOrderNo.MaxLength = 200;
             this.txtWorkOrderNo.Name = "txtWorkOrderNo";
             this.txtWorkOrderNo.Size = new System.Drawing.Size(267, 29);
             this.txtWorkOrderNo.TabIndex = 3;
@@ -386,6 +389,7 @@
             // 
             this.txtInvoiceParty.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoiceParty.Location = new System.Drawing.Point(203, 184);
+            this.txtInvoiceParty.MaxLength = 90;
             this.txtInvoiceParty.Name = "txtInvoiceParty";
             this.txtInvoiceParty.Size = new System.Drawing.Size(267, 29);
             this.txtInvoiceParty.TabIndex = 5;
@@ -407,6 +411,7 @@
             this.txtPayerAddress.BackColor = System.Drawing.Color.White;
             this.txtPayerAddress.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPayerAddress.Location = new System.Drawing.Point(202, 218);
+            this.txtPayerAddress.MaxLength = 250;
             this.txtPayerAddress.Name = "txtPayerAddress";
             this.txtPayerAddress.Size = new System.Drawing.Size(268, 95);
             this.txtPayerAddress.TabIndex = 6;
@@ -461,6 +466,7 @@
             // 
             this.txtRP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRP.Location = new System.Drawing.Point(206, 355);
+            this.txtRP.MaxLength = 90;
             this.txtRP.Name = "txtRP";
             this.txtRP.Size = new System.Drawing.Size(267, 29);
             this.txtRP.TabIndex = 8;
@@ -579,6 +585,7 @@
             this.DescriptionrichTextBox.BackColor = System.Drawing.Color.White;
             this.DescriptionrichTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescriptionrichTextBox.Location = new System.Drawing.Point(156, 15);
+            this.DescriptionrichTextBox.MaxLength = 250;
             this.DescriptionrichTextBox.Name = "DescriptionrichTextBox";
             this.DescriptionrichTextBox.Size = new System.Drawing.Size(255, 95);
             this.DescriptionrichTextBox.TabIndex = 0;

@@ -86,6 +86,7 @@
             // 
             this.txtBillNarrative.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBillNarrative.Location = new System.Drawing.Point(813, 298);
+            this.txtBillNarrative.MaxLength = 500;
             this.txtBillNarrative.Name = "txtBillNarrative";
             this.txtBillNarrative.Size = new System.Drawing.Size(363, 112);
             this.txtBillNarrative.TabIndex = 14;
@@ -129,6 +130,7 @@
             this.txtNote.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNote.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNote.Location = new System.Drawing.Point(813, 416);
+            this.txtNote.MaxLength = 300;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(363, 63);
             this.txtNote.TabIndex = 15;
@@ -420,6 +422,7 @@
             // 
             this.ContactPersontextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContactPersontextBox.Location = new System.Drawing.Point(272, 428);
+            this.ContactPersontextBox.MaxLength = 90;
             this.ContactPersontextBox.Name = "ContactPersontextBox";
             this.ContactPersontextBox.Size = new System.Drawing.Size(267, 29);
             this.ContactPersontextBox.TabIndex = 11;
@@ -439,6 +442,7 @@
             // 
             this.DesignationtextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DesignationtextBox.Location = new System.Drawing.Point(272, 461);
+            this.DesignationtextBox.MaxLength = 90;
             this.DesignationtextBox.Name = "DesignationtextBox";
             this.DesignationtextBox.Size = new System.Drawing.Size(267, 29);
             this.DesignationtextBox.TabIndex = 12;
@@ -458,6 +462,7 @@
             // 
             this.PhonetextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhonetextBox.Location = new System.Drawing.Point(272, 496);
+            this.PhonetextBox.MaxLength = 11;
             this.PhonetextBox.Name = "PhonetextBox";
             this.PhonetextBox.Size = new System.Drawing.Size(267, 29);
             this.PhonetextBox.TabIndex = 13;
