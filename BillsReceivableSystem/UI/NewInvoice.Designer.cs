@@ -257,11 +257,11 @@
             this.lblGrossReceivable.AutoSize = true;
             this.lblGrossReceivable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrossReceivable.ForeColor = System.Drawing.Color.Black;
-            this.lblGrossReceivable.Location = new System.Drawing.Point(66, 501);
+            this.lblGrossReceivable.Location = new System.Drawing.Point(126, 497);
             this.lblGrossReceivable.Name = "lblGrossReceivable";
-            this.lblGrossReceivable.Size = new System.Drawing.Size(137, 19);
+            this.lblGrossReceivable.Size = new System.Drawing.Size(77, 19);
             this.lblGrossReceivable.TabIndex = 228;
-            this.lblGrossReceivable.Text = "Gross Receivable :";
+            this.lblGrossReceivable.Text = "Discount :";
             // 
             // dtpDueDate
             // 

@@ -43,7 +43,7 @@ namespace BillsReceivableSystem.UI
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                String query = "insert into Invoice(CustomerId,InvoiceDate, DueDate, QuotationNo, GrossReceive, NetReceive, PromisedDate, WorkOrderNo, DeliveryNo, InvoiceTo, Address, LPhn, RP, CPhn, UserId,WORef) values (@cus,@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13,@d14,@d15)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                String query = "insert into Invoice(CustomerId,InvoiceDate, DueDate, QuotationNo, Discount, NetReceive, PromisedDate, WorkOrderNo, DeliveryNo, InvoiceTo, Address, LPhn, RP, CPhn, UserId,WORef) values (@cus,@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13,@d14,@d15)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@cus", (object)customerid ?? DBNull.Value);
                 cmd.Parameters.Add(new SqlParameter("@d1",
