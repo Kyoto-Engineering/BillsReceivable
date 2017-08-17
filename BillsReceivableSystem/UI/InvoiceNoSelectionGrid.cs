@@ -29,7 +29,7 @@ namespace BillsReceivableSystem.UI
             try
             {
                 con = new SqlConnection(cs.DBConn);
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT QuotationNo from Invoice", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT RefInvoiceNo from RefNumForInvoice_New", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView1.Rows.Clear();
@@ -38,7 +38,7 @@ namespace BillsReceivableSystem.UI
                     int n = dataGridView1.Rows.Add();
                     dataGridView1.Rows[n].Cells[0].Value = item[0].ToString();
                     //dataGridView1.Rows[n].Cells[1].Value = item[1].ToString();
-                    
+
                 }
 
 
@@ -75,7 +75,7 @@ namespace BillsReceivableSystem.UI
             try
             {
                 con = new SqlConnection(cs.DBConn);
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT QuotationNo from Invoice where (Invoice.QuotationNo LIKE '" + InvoiceNoSearchtextBox.Text + "%')", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT RefInvoiceNo from RefNumForInvoice_New where (RefNumForInvoice_New.RefInvoiceNo LIKE '" + InvoiceNoSearchtextBox.Text + "%')", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView1.Rows.Clear();
@@ -83,7 +83,7 @@ namespace BillsReceivableSystem.UI
                 {
                     int n = dataGridView1.Rows.Add();
                     dataGridView1.Rows[n].Cells[0].Value = item[0].ToString();
-                   
+
                 }
 
 
@@ -91,6 +91,23 @@ namespace BillsReceivableSystem.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void InvoiceNoSelectComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(InvoiceNoSelectComboBox.Text))
+            {
+                if (InvoiceNoSelectComboBox.Text == @"Manual")
+                {
+                    ManualInvoiceTextBox.Visible = true;
+                    InAddButton.Visible = true;
+                }
+                else
+                {
+                    ManualInvoiceTextBox.Visible = false;
+                    InAddButton.Visible = false;
+                }
             }
         }
     }
