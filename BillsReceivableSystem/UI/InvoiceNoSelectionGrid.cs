@@ -94,21 +94,28 @@ namespace BillsReceivableSystem.UI
             }
         }
 
-        private void InvoiceNoSelectComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (!string.IsNullOrWhiteSpace(InvoiceNoSelectComboBox.Text))
-            //{
-            //    if (InvoiceNoSelectComboBox.Text == @"Manual")
-            //    {
-            //        ManualInvoiceTextBox.Visible = true;
-            //        InAddButton.Visible = true;
-            //    }
-            //    else
-            //    {
-            //        ManualInvoiceTextBox.Visible = false;
-            //        InAddButton.Visible = false;
-            //    }
-            //}
-        }
+        //private void InvoiceNoSelectComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //   if (!string.IsNullOrWhiteSpace(InvoiceNoSelectComboBox.Text))
+        //   {
+        //      if (InvoiceNoSelectComboBox.Text == @"Manual")
+        //     {
+        //       ManualInvoiceTextBox.Visible = true;
+        //       InAddButton.Visible = true;
+        //     }
+        //     else
+        //     {
+        //       ManualInvoiceTextBox.Visible = false;
+        //       InAddButton.Visible = false;
+        //     }
+
+        //   }
+        //}
+
+        //private void InAddButton_Click(object sender, EventArgs e)
+        //{
+
+        //} 
+       
     }
 }
