@@ -28,21 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceNoSelectionGrid));
             this.label1 = new System.Windows.Forms.Label();
             this.SearchByCompanyNameGroupBox = new System.Windows.Forms.GroupBox();
             this.InvoiceNoSearchtextBox = new System.Windows.Forms.TextBox();
             this.InvoiceNoSelectiongroupBox = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvoiceNoSelectComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ManualInvoiceTextBox = new System.Windows.Forms.TextBox();
-            this.InAddButton = new System.Windows.Forms.Button();
             this.SearchByCompanyNameGroupBox.SuspendLayout();
             this.InvoiceNoSelectiongroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +56,7 @@
             this.SearchByCompanyNameGroupBox.Controls.Add(this.InvoiceNoSearchtextBox);
             this.SearchByCompanyNameGroupBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchByCompanyNameGroupBox.ForeColor = System.Drawing.Color.OrangeRed;
-            this.SearchByCompanyNameGroupBox.Location = new System.Drawing.Point(78, 182);
+            this.SearchByCompanyNameGroupBox.Location = new System.Drawing.Point(79, 63);
             this.SearchByCompanyNameGroupBox.Name = "SearchByCompanyNameGroupBox";
             this.SearchByCompanyNameGroupBox.Size = new System.Drawing.Size(330, 63);
             this.SearchByCompanyNameGroupBox.TabIndex = 4;
@@ -81,7 +77,7 @@
             this.InvoiceNoSelectiongroupBox.Controls.Add(this.dataGridView1);
             this.InvoiceNoSelectiongroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InvoiceNoSelectiongroupBox.ForeColor = System.Drawing.Color.Blue;
-            this.InvoiceNoSelectiongroupBox.Location = new System.Drawing.Point(79, 251);
+            this.InvoiceNoSelectiongroupBox.Location = new System.Drawing.Point(78, 145);
             this.InvoiceNoSelectiongroupBox.Name = "InvoiceNoSelectiongroupBox";
             this.InvoiceNoSelectiongroupBox.Size = new System.Drawing.Size(331, 363);
             this.InvoiceNoSelectiongroupBox.TabIndex = 3;
@@ -100,8 +96,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(17, 23);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(296, 334);
             this.dataGridView1.TabIndex = 1;
@@ -114,60 +110,16 @@
             this.Column1.ReadOnly = true;
             this.Column1.Width = 250;
             // 
-            // InvoiceNoSelectComboBox
-            // 
-            this.InvoiceNoSelectComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvoiceNoSelectComboBox.FormattingEnabled = true;
-            this.InvoiceNoSelectComboBox.Items.AddRange(new object[] {
-            "Manual",
-            "POS"});
-            this.InvoiceNoSelectComboBox.Location = new System.Drawing.Point(35, 19);
-            this.InvoiceNoSelectComboBox.Name = "InvoiceNoSelectComboBox";
-            this.InvoiceNoSelectComboBox.Size = new System.Drawing.Size(286, 28);
-            this.InvoiceNoSelectComboBox.TabIndex = 6;
-            this.InvoiceNoSelectComboBox.SelectedIndexChanged += new System.EventHandler(this.InvoiceNoSelectComboBox_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.InvoiceNoSelectComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(79, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 58);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            // 
-            // ManualInvoiceTextBox
-            // 
-            this.ManualInvoiceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManualInvoiceTextBox.Location = new System.Drawing.Point(114, 134);
-            this.ManualInvoiceTextBox.Name = "ManualInvoiceTextBox";
-            this.ManualInvoiceTextBox.Size = new System.Drawing.Size(286, 26);
-            this.ManualInvoiceTextBox.TabIndex = 8;
-            this.ManualInvoiceTextBox.Visible = false;
-            // 
-            // InAddButton
-            // 
-            this.InAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InAddButton.Location = new System.Drawing.Point(438, 125);
-            this.InAddButton.Name = "InAddButton";
-            this.InAddButton.Size = new System.Drawing.Size(92, 54);
-            this.InAddButton.TabIndex = 9;
-            this.InAddButton.Text = "Invoice Add";
-            this.InAddButton.UseVisualStyleBackColor = true;
-            this.InAddButton.Visible = false;
-            // 
             // InvoiceNoSelectionGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(566, 632);
-            this.Controls.Add(this.InAddButton);
-            this.Controls.Add(this.ManualInvoiceTextBox);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(484, 537);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchByCompanyNameGroupBox);
             this.Controls.Add(this.InvoiceNoSelectiongroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InvoiceNoSelectionGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvoiceNoSelectionGrid";
@@ -176,7 +128,6 @@
             this.SearchByCompanyNameGroupBox.PerformLayout();
             this.InvoiceNoSelectiongroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,10 +141,6 @@
         private System.Windows.Forms.GroupBox InvoiceNoSelectiongroupBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.ComboBox InvoiceNoSelectComboBox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox ManualInvoiceTextBox;
-        private System.Windows.Forms.Button InAddButton;
 
     }
 }
