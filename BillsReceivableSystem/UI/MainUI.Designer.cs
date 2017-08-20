@@ -36,23 +36,23 @@
             this.btnInvoice = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ReportsButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.ReportsButton);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.invoiceListbutton);
             this.groupBox1.Controls.Add(this.billEntrybutton);
             this.groupBox1.Controls.Add(this.btnInvoice);
-            this.groupBox1.Location = new System.Drawing.Point(73, 150);
+            this.groupBox1.Location = new System.Drawing.Point(28, 95);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(301, 325);
+            this.groupBox1.Size = new System.Drawing.Size(301, 427);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -60,7 +60,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.ForestGreen;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(157, 152);
+            this.button1.Location = new System.Drawing.Point(157, 123);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 76);
@@ -73,7 +73,7 @@
             // 
             this.invoiceListbutton.BackColor = System.Drawing.Color.ForestGreen;
             this.invoiceListbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceListbutton.Location = new System.Drawing.Point(15, 152);
+            this.invoiceListbutton.Location = new System.Drawing.Point(15, 123);
             this.invoiceListbutton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.invoiceListbutton.Name = "invoiceListbutton";
             this.invoiceListbutton.Size = new System.Drawing.Size(127, 76);
@@ -131,18 +131,17 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // button2
+            // ReportsButton
             // 
-            this.button2.BackColor = System.Drawing.Color.ForestGreen;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(15, 245);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 63);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Invoice Report";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ReportsButton.BackColor = System.Drawing.Color.ForestGreen;
+            this.ReportsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportsButton.Location = new System.Drawing.Point(15, 218);
+            this.ReportsButton.Name = "ReportsButton";
+            this.ReportsButton.Size = new System.Drawing.Size(127, 66);
+            this.ReportsButton.TabIndex = 7;
+            this.ReportsButton.Text = "Reports";
+            this.ReportsButton.UseVisualStyleBackColor = false;
+            this.ReportsButton.Click += new System.EventHandler(this.ReportsButton_Click);
             // 
             // MainUI
             // 
@@ -175,6 +174,6 @@
         private System.Windows.Forms.Button billEntrybutton;
         private System.Windows.Forms.Button invoiceListbutton;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ReportsButton;
     }
 }
