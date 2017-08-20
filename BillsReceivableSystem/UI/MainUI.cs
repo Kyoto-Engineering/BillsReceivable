@@ -70,13 +70,24 @@ namespace BillsReceivableSystem.UI
             this.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    ReportForInvoice f2 = new ReportForInvoice();
+        //    this.Visible = false;
+        //    f2.ShowDialog();
+        //    this.Visible = true;
+        //}
+
+        private void ReportsButton_Click(object sender, EventArgs e)
         {
-            ReportForInvoice f2 = new ReportForInvoice();
+            this.Hide();
+            ReportsUI f2 = new ReportsUI();
             this.Visible = false;
             f2.ShowDialog();
             this.Visible = true;
         }
+
+        
 
         
     }
