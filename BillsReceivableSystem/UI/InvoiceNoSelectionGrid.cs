@@ -33,6 +33,7 @@ namespace BillsReceivableSystem.UI
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView1.Rows.Clear();
+                //ManualInvoiceTextBox.Text = dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
                 foreach (DataRow item in dt.Rows)
                 {
                     int n = dataGridView1.Rows.Add();
@@ -94,28 +95,31 @@ namespace BillsReceivableSystem.UI
             }
         }
 
-        //private void InvoiceNoSelectComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //   if (!string.IsNullOrWhiteSpace(InvoiceNoSelectComboBox.Text))
-        //   {
-        //      if (InvoiceNoSelectComboBox.Text == @"Manual")
-        //     {
-        //       ManualInvoiceTextBox.Visible = true;
-        //       InAddButton.Visible = true;
-        //     }
-        //     else
-        //     {
-        //       ManualInvoiceTextBox.Visible = false;
-        //       InAddButton.Visible = false;
-        //     }
-
-        //   }
-        //}
-
         //private void InAddButton_Click(object sender, EventArgs e)
         //{
+        //    dataGridView1.Rows.Add();
+        //    dataGridView1.Rows[InAddButton_Click].Cells["Invoice_No"].Value = "Invoice " + (InAddButton_Click + 1).ToString();
+        //}
 
-        //} 
        
+        //private void InvoiceNoSelectComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrWhiteSpace(InvoiceNoSelectComboBox.Text))
+        //    {
+        //        if (InvoiceNoSelectComboBox.Text == @"Manual")
+        //        {
+        //            ManualInvoiceTextBox.Visible = true;
+        //            InAddButton.Visible = true;
+        //        }
+        //        else
+        //        {
+        //            ManualInvoiceTextBox.Visible = false;
+        //            InAddButton.Visible = false;
+        //        }
+
+        //    }
+        //}
+
+
     }
 }
