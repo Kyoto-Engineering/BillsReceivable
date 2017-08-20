@@ -127,6 +127,12 @@
     <Compile Include="Report\ReportForInvoice.Designer.cs">
       <DependentUpon>ReportForInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\ReportsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportsUI.Designer.cs">
+      <DependentUpon>ReportsUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\ReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportForInvoice.resx">
       <DependentUpon>ReportForInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportsUI.resx">
+      <DependentUpon>ReportsUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportViewer.resx">
       <DependentUpon>ReportViewer.cs</DependentUpon>
