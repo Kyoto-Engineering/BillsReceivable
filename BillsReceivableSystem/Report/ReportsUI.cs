@@ -41,7 +41,7 @@ namespace BillsReceivableSystem.Report
             with1.DatabaseName = "BillsReceivableDB";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
-            AllREceivableBillsList cr = new AllREceivableBillsList();
+            AllReceivableBillsList cr = new AllReceivableBillsList();
             tables = cr.Database.Tables;
             foreach (Table table in tables)
             {
