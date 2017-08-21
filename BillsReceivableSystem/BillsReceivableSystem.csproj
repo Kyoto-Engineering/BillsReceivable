@@ -109,10 +109,10 @@
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\InputBox.cs" />
-    <Compile Include="Report\AllREceivableBillsList.cs">
+    <Compile Include="Report\AllReceivableBillsList1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AllREceivableBillsList.rpt</DependentUpon>
+      <DependentUpon>AllReceivableBillsList.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\Invoices.cs">
@@ -204,9 +204,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report\AllREceivableBillsList.rpt">
+    <EmbeddedResource Include="Report\AllReceivableBillsList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>AllREceivableBillsList.cs</LastGenOutput>
+      <LastGenOutput>AllReceivableBillsList1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Invoices.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
